@@ -1,0 +1,2631 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>TIDE Kitchen — The Incubator for QSR Dining Entrepreneurs · South Shore, Chicago</title>
+<meta name="description" content="A place-based incubator preparing overlooked QSR entrepreneurs for franchise-grade scale. Recapturing $29M in annual dining leakage on Chicago's 71st Street corridor. Opening 2027." />
+<meta name="theme-color" content="#0a1f33" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="TIDE Kitchen — A Rising Tide" />
+<meta property="og:description" content="Franchising, capital structures, and urban revitalization in Chicago's South Shore. Opening 2027." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/img/CORNER_UPDATE.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=JetBrains+Mono:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  /* ============================================================
+     TIDE KITCHEN — Editorial / Institutional
+     ============================================================ */
+
+  :root {
+    --ink-deep:        #061726;
+    --ink:             #0a1f33;
+    --ink-mid:         #102b44;
+    --ink-soft:        #1a3a57;
+    --paper:           #f5f1e8;
+    --paper-soft:      #ebe5d5;
+    --paper-edge:      #d9d1bd;
+    --gold:            #c9a961;
+    --gold-bright:     #d9bb74;
+    --gold-deep:       #a08641;
+    --teal:            #4a8a9e;
+    --rule:            rgba(201,169,97,0.25);
+    --rule-paper:      rgba(10,31,51,0.18);
+    --text-ink:        #0a1f33;
+    --text-paper:      #efe9d9;
+    --text-paper-mute: rgba(239,233,217,0.62);
+    --text-ink-mute:   rgba(10,31,51,0.62);
+
+    --font-display: 'EB Garamond', 'Times New Roman', Georgia, serif;
+    --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono:    'JetBrains Mono', ui-monospace, 'SF Mono', monospace;
+
+    --max:    1280px;
+    --gutter: clamp(20px, 4vw, 56px);
+  }
+
+  *,*::before,*::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--text-paper);
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--gold); color: var(--ink); }
+
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Utilities ---------- */
+  .wrap { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); }
+
+  .meta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1.4;
+  }
+  .meta--mute { color: var(--text-paper-mute); }
+  .meta--ink { color: var(--gold-deep); }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 28px;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 28px; height: 1px;
+    background: var(--gold);
+  }
+
+  .display {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.04;
+    letter-spacing: -0.01em;
+  }
+  .display em { font-style: italic; color: var(--gold); font-weight: 600; }
+  .display .accent-teal { color: var(--teal); font-style: italic; }
+  .paper .display .accent-teal { color: #2d6a7f; }
+
+  /* ---------- Background atmospherics ---------- */
+  .grain {
+    position: fixed; inset: 0;
+    pointer-events: none;
+    opacity: 0.04;
+    mix-blend-mode: overlay;
+    z-index: 200;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /* ====================================================
+     NAVIGATION
+     ==================================================== */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 22px 0;
+    background: rgba(6,23,38,0);
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, padding 0.4s ease, border-color 0.4s ease;
+    border-bottom: 1px solid transparent;
+  }
+  .nav.is-scrolled {
+    background: rgba(6,23,38,0.78);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    padding: 14px 0;
+    border-bottom-color: rgba(201,169,97,0.12);
+  }
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .brand {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--paper);
+    font-weight: 500;
+  }
+  .brand .dot { color: var(--gold); margin: 0 6px; }
+  .nav__links {
+    display: flex;
+    gap: 36px;
+  }
+  .nav__links a {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-paper-mute);
+    transition: color 0.2s ease;
+    position: relative;
+  }
+  .nav__links a:hover { color: var(--gold); }
+  .nav__cta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: var(--gold);
+    padding: 11px 20px;
+    border-radius: 1px;
+    transition: background 0.2s ease, transform 0.2s ease;
+  }
+  .nav__cta:hover { background: var(--gold-bright); transform: translateY(-1px); }
+  @media (max-width: 880px) {
+    .nav__links { display: none; }
+  }
+
+  /* ====================================================
+     HERO
+     ==================================================== */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    background: var(--ink-deep);
+    overflow: hidden;
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("assets/img/CORNER_UPDATE.png");
+    background-size: cover;
+    background-position: center 35%;
+    background-repeat: no-repeat;
+  }
+  .hero__bg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(6,23,38,0.55) 0%, rgba(6,23,38,0.7) 30%, rgba(6,23,38,0.92) 75%, rgba(10,31,51,1) 100%),
+      radial-gradient(ellipse at 70% 30%, rgba(74,138,158,0.18) 0%, transparent 55%),
+      radial-gradient(ellipse at 20% 80%, rgba(201,169,97,0.12) 0%, transparent 50%);
+  }
+  .hero__bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.04;
+    background-image:
+      linear-gradient(var(--gold) 1px, transparent 1px),
+      linear-gradient(90deg, var(--gold) 1px, transparent 1px);
+    background-size: 80px 80px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
+  .hero__inner {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero__topline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: clamp(48px, 9vh, 110px);
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 999px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(6,23,38,0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .hero__badge .pulse {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+    box-shadow: 0 0 0 0 rgba(201,169,97,0.7);
+    animation: pulse 2.4s infinite;
+  }
+  @keyframes pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(201,169,97,0.7); }
+    70%  { box-shadow: 0 0 0 12px rgba(201,169,97,0); }
+    100% { box-shadow: 0 0 0 0 rgba(201,169,97,0); }
+  }
+
+  .hero__title {
+    font-size: clamp(56px, 11vw, 168px);
+    line-height: 0.92;
+    margin: 0 0 36px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    text-shadow: 0 4px 40px rgba(6,23,38,0.5);
+  }
+  .hero__title em {
+    color: var(--gold);
+    font-weight: 600;
+    font-style: italic;
+  }
+  .hero__deck {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.4vw, 30px);
+    line-height: 1.4;
+    color: var(--text-paper);
+    max-width: 680px;
+    font-weight: 400;
+    margin: 0 0 56px;
+  }
+  .hero__deck em { color: var(--gold); font-style: italic; }
+
+  .hero__bottom {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid var(--rule);
+    padding-top: 32px;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    gap: 32px;
+    align-items: end;
+  }
+  .hero__quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold);
+    line-height: 1.4;
+  }
+  .hero__stat .meta { display: block; margin-bottom: 8px; }
+  .hero__stat .v {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3.2vw, 40px);
+    font-weight: 500;
+    color: var(--paper);
+    line-height: 1;
+  }
+  .hero__stat .v em { color: var(--gold); font-style: italic; }
+  .hero__stat .l {
+    font-size: 12px;
+    color: var(--text-paper-mute);
+    margin-top: 6px;
+  }
+  @media (max-width: 880px) {
+    .hero__bottom { grid-template-columns: 1fr 1fr; gap: 24px; }
+    .hero__quote { grid-column: 1 / -1; }
+  }
+
+  .hero__wave {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.5;
+  }
+
+  /* ====================================================
+     ANIMATION: Reveal on scroll
+     ==================================================== */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.is-in { opacity: 1; transform: none; }
+  .reveal[data-delay="1"] { transition-delay: 0.08s; }
+  .reveal[data-delay="2"] { transition-delay: 0.16s; }
+  .reveal[data-delay="3"] { transition-delay: 0.24s; }
+  .reveal[data-delay="4"] { transition-delay: 0.32s; }
+  .reveal[data-delay="5"] { transition-delay: 0.4s; }
+  .reveal[data-delay="6"] { transition-delay: 0.48s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    .pulse  { animation: none; }
+    html    { scroll-behavior: auto; }
+  }
+
+  /* ====================================================
+     SECTION: THESIS (paper)
+     ==================================================== */
+  .paper {
+    background: var(--paper);
+    color: var(--text-ink);
+  }
+  .paper .meta { color: var(--gold-deep); }
+  .paper .eyebrow { color: var(--gold-deep); }
+  .paper .eyebrow::before { background: var(--gold-deep); }
+
+  .section {
+    padding: clamp(80px, 12vh, 140px) 0;
+    position: relative;
+  }
+  .section--tight { padding: clamp(60px, 9vh, 100px) 0; }
+
+  .section__head {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 48px;
+    margin-bottom: clamp(48px, 7vw, 88px);
+    align-items: start;
+  }
+  @media (max-width: 880px) { .section__head { grid-template-columns: 1fr; gap: 16px; } }
+
+  .section__title {
+    font-size: clamp(36px, 5.4vw, 76px);
+    margin: 0;
+    color: inherit;
+  }
+
+  .thesis-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 5vw, 80px);
+    align-items: start;
+  }
+  .thesis-lede {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: 1.45;
+    font-weight: 400;
+    color: var(--text-ink);
+  }
+  .thesis-lede em { font-style: italic; color: #2d6a7f; }
+  .thesis-lede .drop {
+    float: left;
+    font-family: var(--font-display);
+    font-size: 5em;
+    line-height: 0.85;
+    padding: 0.08em 0.12em 0 0;
+    color: var(--gold-deep);
+    font-weight: 600;
+  }
+  .thesis-detail {
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-ink-mute);
+  }
+  .thesis-detail p + p { margin-top: 18px; }
+  .thesis-detail strong { color: var(--text-ink); font-weight: 500; }
+
+  @media (max-width: 880px) { .thesis-body { grid-template-columns: 1fr; } }
+
+  .stats-row {
+    margin-top: clamp(56px, 8vh, 96px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule-paper);
+    border-bottom: 1px solid var(--rule-paper);
+  }
+  .stats-row .stat {
+    padding: 36px 28px;
+    border-right: 1px solid var(--rule-paper);
+  }
+  .stats-row .stat:last-child { border-right: 0; }
+  .stat .v {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 72px);
+    font-weight: 500;
+    line-height: 1;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+  .stat .v em { color: var(--gold-deep); font-style: italic; font-weight: 600; }
+  .stat .l {
+    margin-top: 14px;
+    font-size: 13px;
+    line-height: 1.5;
+    color: var(--text-ink-mute);
+    max-width: 28ch;
+  }
+  .stat .label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    display: block;
+    margin-bottom: 14px;
+  }
+  @media (max-width: 880px) {
+    .stats-row { grid-template-columns: 1fr 1fr; }
+    .stats-row .stat:nth-child(2) { border-right: 0; }
+    .stats-row .stat:nth-child(1),
+    .stats-row .stat:nth-child(2) { border-bottom: 1px solid var(--rule-paper); }
+  }
+
+  /* ====================================================
+     SECTION: MARKET / OPPORTUNITY (dark)
+     ==================================================== */
+  .opportunity {
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .opportunity::before {
+    content: "";
+    position: absolute;
+    top: 0; right: -20%;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(74,138,158,0.12) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .opportunity__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: center;
+  }
+  .opportunity__photo {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    border: 1px solid var(--ink-soft);
+  }
+  .opportunity__photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: saturate(0.85) contrast(1.05);
+    transition: transform 1.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .opportunity__photo:hover img { transform: scale(1.04); }
+  .opportunity__photo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6,23,38,0.0) 50%, rgba(6,23,38,0.85) 100%);
+    pointer-events: none;
+  }
+  .opportunity__photo .tag {
+    position: absolute;
+    top: 20px; left: 20px;
+    z-index: 2;
+    background: rgba(6,23,38,0.78);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 8px 12px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid var(--rule);
+  }
+  .opportunity__photo .badge-stat {
+    position: absolute;
+    bottom: 24px; left: 24px;
+    z-index: 2;
+  }
+  .opportunity__photo .badge-stat .v {
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 1;
+    color: var(--gold);
+    font-weight: 600;
+    font-style: italic;
+  }
+  .opportunity__photo .badge-stat .l {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--paper);
+    margin-top: 6px;
+  }
+
+  .opportunity__points {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .point {
+    border-left: 2px solid var(--gold);
+    padding: 4px 0 4px 24px;
+  }
+  .point__label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 10px;
+  }
+  .point__body {
+    font-size: 17px;
+    color: var(--text-paper);
+    line-height: 1.55;
+  }
+  .point__body strong {
+    color: var(--paper);
+    font-weight: 500;
+  }
+  @media (max-width: 880px) {
+    .opportunity__grid { grid-template-columns: 1fr; }
+  }
+
+  /* ====================================================
+     LEAKAGE TABLE
+     ==================================================== */
+  .leakage {
+    margin-top: clamp(60px, 8vh, 100px);
+    border-top: 1px solid var(--rule);
+  }
+  .leakage__row {
+    display: grid;
+    grid-template-columns: 80px 2fr 1fr 3fr;
+    gap: 24px;
+    padding: 24px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: center;
+    transition: background 0.3s ease, padding 0.3s ease;
+  }
+  .leakage__row:hover {
+    background: rgba(201,169,97,0.04);
+    padding-left: 12px; padding-right: 12px;
+  }
+  .leakage__num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+  }
+  .leakage__cat {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--paper);
+    font-weight: 500;
+  }
+  .leakage__amt {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--gold);
+    font-weight: 600;
+    font-style: italic;
+  }
+  .leakage__imp {
+    font-size: 14px;
+    color: var(--text-paper-mute);
+    line-height: 1.5;
+  }
+  @media (max-width: 880px) {
+    .leakage__row { grid-template-columns: 60px 1fr; gap: 12px; }
+    .leakage__amt, .leakage__imp { grid-column: 2 / 3; }
+    .leakage__cat { grid-column: 2 / 3; }
+  }
+
+  /* ====================================================
+     VISION — full-bleed before/after on the corner
+     ==================================================== */
+  .vision {
+    background: var(--ink-deep);
+    color: var(--text-paper);
+    padding: clamp(80px, 12vh, 140px) 0 0;
+    overflow: hidden;
+  }
+  .vision__head {
+    text-align: center;
+    margin-bottom: clamp(48px, 7vh, 80px);
+  }
+  .vision__title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 5.4vw, 76px);
+    line-height: 1;
+    margin: 16px 0 24px;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .vision__title em { color: var(--gold); font-style: italic; }
+  .vision__deck {
+    font-family: var(--font-display);
+    font-size: clamp(18px, 2vw, 22px);
+    color: var(--text-paper-mute);
+    max-width: 60ch;
+    margin: 0 auto;
+    font-weight: 400;
+  }
+  .vision__compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-bottom: 0;
+  }
+  .vision__panel {
+    position: relative;
+    aspect-ratio: 16/10;
+    overflow: hidden;
+  }
+  .vision__panel img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 2s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .vision__panel:hover img { transform: scale(1.03); }
+  .vision__panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6,23,38,0) 60%, rgba(6,23,38,0.85) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .vision__caption {
+    position: absolute;
+    bottom: 32px; left: 32px; right: 32px;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 16px;
+  }
+  .vision__caption-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+  }
+  .vision__caption-title {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.6vw, 32px);
+    color: var(--paper);
+    font-style: italic;
+    line-height: 1.1;
+  }
+  .vision__year {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 64px);
+    color: var(--gold);
+    font-style: italic;
+    font-weight: 600;
+    line-height: 1;
+  }
+  @media (max-width: 720px) {
+    .vision__compare { grid-template-columns: 1fr; }
+  }
+
+  /* ====================================================
+     PIPELINE — four stage
+     ==================================================== */
+  .pipeline {
+    background: var(--paper);
+    color: var(--text-ink);
+  }
+  .pipeline .meta, .pipeline .eyebrow { color: var(--gold-deep); }
+  .pipeline .eyebrow::before { background: var(--gold-deep); }
+
+  .stage-feature {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(24px, 5vw, 64px);
+    align-items: center;
+    margin-bottom: clamp(48px, 8vh, 96px);
+  }
+  .stage-feature:last-child { margin-bottom: 0; }
+  .stage-feature--reverse { grid-template-columns: 1fr 1fr; }
+  .stage-feature--reverse .stage-feature__media { order: 2; }
+  .stage-feature--reverse .stage-feature__body { order: 1; }
+  .stage-feature__media {
+    position: relative;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border: 1px solid var(--paper-edge);
+  }
+  .stage-feature__media img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 1.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+  }
+  .stage-feature__media:hover img { transform: scale(1.04); }
+  .stage-feature__media .corner {
+    position: absolute;
+    bottom: 0; left: 0;
+    z-index: 2;
+    background: var(--ink);
+    color: var(--paper);
+    padding: 12px 20px;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .stage-feature__media .corner em {
+    color: var(--gold);
+    font-style: normal;
+    margin-right: 8px;
+  }
+  .stage-feature__body {
+    padding: 16px 0;
+  }
+  .stage-feature__phase {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 16px;
+  }
+  .stage-feature__title {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 500;
+    line-height: 1.05;
+    color: var(--ink);
+    margin: 0 0 16px;
+    letter-spacing: -0.01em;
+  }
+  .stage-feature__title em { color: var(--gold-deep); font-style: italic; }
+  .stage-feature__sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 22px;
+    color: var(--text-ink-mute);
+    margin-bottom: 24px;
+  }
+  .stage-feature__copy {
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text-ink-mute);
+    max-width: 50ch;
+    margin: 0 0 24px;
+  }
+  .stage-feature__metric {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 12px 0;
+    border-top: 1px solid var(--rule-paper);
+    border-bottom: 1px solid var(--rule-paper);
+  }
+  .stage-feature__metric .v {
+    font-family: var(--font-display);
+    font-size: 28px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .stage-feature__metric .v em { color: var(--gold-deep); font-style: italic; }
+  .stage-feature__metric .l {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-ink-mute);
+  }
+  @media (max-width: 880px) {
+    .stage-feature, .stage-feature--reverse { grid-template-columns: 1fr; }
+    .stage-feature--reverse .stage-feature__media,
+    .stage-feature--reverse .stage-feature__body { order: 0; }
+  }
+
+  .stages-compact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: clamp(48px, 7vh, 80px);
+  }
+  .stage-card {
+    background: var(--paper-soft);
+    padding: 40px 36px;
+    border: 1px solid var(--paper-edge);
+    transition: transform 0.4s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+  .stage-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px -16px rgba(10,31,51,0.2);
+    border-color: var(--gold);
+  }
+  .stage-card__phase {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 14px;
+  }
+  .stage-card__title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 6px;
+    line-height: 1.1;
+  }
+  .stage-card__title em { color: var(--gold-deep); font-style: italic; }
+  .stage-card__sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--text-ink-mute);
+    margin-bottom: 18px;
+  }
+  .stage-card__copy {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-ink-mute);
+  }
+  .stage-card__metric {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--paper-edge);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .stage-card__metric .v {
+    font-family: var(--font-display);
+    font-size: 24px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .stage-card__metric .v em { color: var(--gold-deep); font-style: italic; }
+  .stage-card__metric .l {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-ink-mute);
+  }
+  @media (max-width: 720px) {
+    .stages-compact { grid-template-columns: 1fr; }
+  }
+
+  /* MULTIPLIER CALLOUT */
+  .multiplier {
+    margin-top: clamp(56px, 8vh, 100px);
+    background: var(--ink);
+    color: var(--text-paper);
+    padding: clamp(36px, 5vw, 64px) clamp(32px, 5vw, 64px);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: clamp(32px, 6vw, 80px);
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .multiplier::before {
+    content: "";
+    position: absolute;
+    top: 0; right: 0;
+    width: 320px; height: 320px;
+    background: radial-gradient(circle, rgba(201,169,97,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .multiplier__num {
+    font-family: var(--font-display);
+    font-size: clamp(80px, 14vw, 180px);
+    line-height: 0.9;
+    color: var(--gold);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: -0.02em;
+    position: relative;
+  }
+  .multiplier__body { position: relative; }
+  .multiplier__label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .multiplier__title {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.2;
+    margin: 0 0 18px;
+    color: var(--paper);
+    font-weight: 400;
+  }
+  .multiplier__title em { color: var(--gold); font-style: italic; }
+  .multiplier__copy {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--text-paper-mute);
+    max-width: 60ch;
+  }
+  @media (max-width: 880px) {
+    .multiplier { grid-template-columns: 1fr; gap: 24px; }
+  }
+
+  /* ====================================================
+     CATALYSTS — three mega-developments
+     ==================================================== */
+  .catalysts {
+    background: var(--ink-deep);
+    overflow: hidden;
+    position: relative;
+  }
+  .catalysts::before {
+    content: "";
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(74,138,158,0.1) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .cat-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--ink-soft);
+    border: 1px solid var(--ink-soft);
+    margin-top: 56px;
+  }
+  .cat {
+    background: var(--ink);
+    transition: background 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .cat:hover { background: var(--ink-mid); }
+  .cat__viz {
+    height: 220px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, var(--ink-mid) 0%, var(--ink-deep) 100%);
+  }
+  .cat__viz img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 1.6s cubic-bezier(0.2, 0.7, 0.2, 1);
+    filter: saturate(0.92) contrast(1.04);
+  }
+  .cat:hover .cat__viz img { transform: scale(1.05); }
+  .cat__viz::after {
+    /* Subtle dark overlay so the corner location tag stays legible */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(6,23,38,0.35) 0%, rgba(6,23,38,0) 35%, rgba(6,23,38,0) 65%, rgba(10,31,51,0.55) 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .cat__viz .loc-tag {
+    position: absolute;
+    top: 14px; right: 14px;
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    background: rgba(6,23,38,0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 5px 9px;
+    border: 1px solid var(--rule);
+  }
+  .cat__viz svg {
+    width: 100%; height: 100%;
+    display: block;
+  }
+  .cat__body {
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    flex: 1;
+  }
+  .cat__amount {
+    font-family: var(--font-display);
+    font-size: clamp(40px, 5vw, 64px);
+    line-height: 1;
+    color: var(--gold);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: -0.02em;
+  }
+  .cat__name {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--paper);
+    font-weight: 500;
+    line-height: 1.2;
+  }
+  .cat__loc {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .cat__copy {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-paper-mute);
+    border-top: 1px solid var(--ink-soft);
+    padding-top: 16px;
+    margin-top: auto;
+  }
+  @media (max-width: 880px) {
+    .cat-grid { grid-template-columns: 1fr; }
+  }
+
+  .pressure {
+    margin-top: clamp(56px, 8vh, 100px);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--ink-soft);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .pressure__item {
+    background: var(--ink-deep);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .pressure__num {
+    font-family: var(--font-display);
+    font-size: 48px;
+    color: var(--gold);
+    font-weight: 600;
+    line-height: 1;
+    font-style: italic;
+  }
+  .pressure__name {
+    font-family: var(--font-display);
+    font-size: 16px;
+    color: var(--paper);
+    margin-top: 6px;
+    font-weight: 500;
+  }
+  .pressure__desc {
+    font-size: 12px;
+    color: var(--text-paper-mute);
+    line-height: 1.5;
+  }
+  @media (max-width: 880px) {
+    .pressure { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ====================================================
+     CAPITAL TOOLKIT
+     ==================================================== */
+  .capital {
+    background: var(--paper);
+    color: var(--text-ink);
+  }
+  .capital .meta, .capital .eyebrow { color: var(--gold-deep); }
+  .capital .eyebrow::before { background: var(--gold-deep); }
+
+  .toolkit {
+    margin-top: 48px;
+    border-top: 1px solid var(--rule-paper);
+  }
+  .toolkit__row {
+    display: grid;
+    grid-template-columns: 60px 1.4fr 1fr 2.2fr;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--rule-paper);
+    align-items: start;
+    gap: 24px;
+    transition: padding 0.3s ease, background 0.3s ease;
+  }
+  .toolkit__row:hover { background: rgba(201,169,97,0.05); padding-left: 12px; padding-right: 12px; }
+  .toolkit__row .num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--gold-deep);
+    letter-spacing: 0.18em;
+    padding-top: 4px;
+  }
+  .toolkit__row .name {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+  .toolkit__row .name em { color: var(--gold-deep); font-style: italic; }
+  .toolkit__row .name .sub {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    color: var(--text-ink-mute);
+    margin-top: 6px;
+    font-style: normal;
+  }
+  .toolkit__row .stage-tags {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    padding-top: 6px;
+  }
+  .toolkit__row .stage-tags .tag {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    background: transparent;
+    color: var(--text-ink-mute);
+    padding: 4px 8px;
+    border: 1px solid var(--rule-paper);
+  }
+  .toolkit__row .stage-tags .tag.on {
+    color: var(--ink);
+    border-color: var(--gold);
+    background: rgba(201,169,97,0.12);
+  }
+  .toolkit__row .desc {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-ink-mute);
+  }
+  @media (max-width: 880px) {
+    .toolkit__row { grid-template-columns: 1fr; gap: 8px; }
+    .toolkit__row .num { padding: 0; }
+  }
+
+  .recycling {
+    margin-top: clamp(48px, 6vh, 80px);
+    background: var(--paper-soft);
+    border-left: 3px solid var(--gold-deep);
+    padding: 28px 32px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+  }
+  .recycling__icon {
+    font-family: var(--font-display);
+    font-size: 48px;
+    color: var(--gold-deep);
+    line-height: 1;
+    font-style: italic;
+  }
+  .recycling__body { flex: 1; }
+  .recycling__title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    color: var(--ink);
+    margin: 0 0 10px;
+    font-weight: 500;
+  }
+  .recycling__title em { font-style: italic; color: var(--gold-deep); }
+  .recycling__copy {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-ink-mute);
+    margin: 0;
+  }
+
+  /* ====================================================
+     WEALTH DISTRIBUTED
+     ==================================================== */
+  .wealth {
+    background: var(--ink);
+    overflow: hidden;
+    position: relative;
+  }
+  .wealth__lead {
+    font-family: var(--font-display);
+    font-size: clamp(24px, 3vw, 36px);
+    line-height: 1.3;
+    max-width: 38ch;
+    color: var(--paper);
+    font-weight: 400;
+  }
+  .wealth__lead em { color: var(--gold); font-style: italic; }
+  .audiences {
+    margin-top: clamp(56px, 8vh, 88px);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--ink-soft);
+    border: 1px solid var(--ink-soft);
+  }
+  .aud {
+    background: var(--ink);
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: background 0.4s ease;
+    position: relative;
+  }
+  .aud:hover { background: var(--ink-mid); }
+  .aud__label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .aud__title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    color: var(--paper);
+    font-weight: 500;
+    margin: 0;
+  }
+  .aud__hook {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--gold);
+    line-height: 1.3;
+    margin: 4px 0 8px;
+  }
+  .aud__copy {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-paper-mute);
+    margin: 0;
+  }
+  @media (max-width: 880px) {
+    .audiences { grid-template-columns: 1fr; }
+  }
+
+  /* ====================================================
+     SROI SECTION
+     ==================================================== */
+  .sroi {
+    background: var(--paper);
+    color: var(--text-ink);
+  }
+  .sroi .meta, .sroi .eyebrow { color: var(--gold-deep); }
+  .sroi .eyebrow::before { background: var(--gold-deep); }
+
+  .sroi__visual {
+    margin: clamp(48px, 7vh, 80px) 0;
+    background: var(--ink);
+    color: var(--paper);
+    padding: clamp(40px, 6vw, 80px) clamp(32px, 5vw, 64px);
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: clamp(24px, 5vw, 64px);
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .sroi__in { text-align: center; }
+  .sroi__inLabel {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .sroi__inNum {
+    font-family: var(--font-display);
+    font-size: clamp(80px, 12vw, 144px);
+    line-height: 0.9;
+    color: var(--paper);
+    font-weight: 500;
+  }
+  .sroi__inSub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-paper-mute);
+    margin-top: 8px;
+  }
+  .sroi__channels {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+  }
+  .sroi__beam {
+    width: clamp(80px, 12vw, 160px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--gold-deep), var(--gold));
+    position: relative;
+    overflow: hidden;
+  }
+  .sroi__beam::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+    animation: beam 2.6s ease-in-out infinite;
+  }
+  .sroi__beam:nth-child(2)::after { animation-delay: 0.2s; }
+  .sroi__beam:nth-child(3)::after { animation-delay: 0.4s; }
+  .sroi__beam:nth-child(4)::after { animation-delay: 0.6s; }
+  @keyframes beam {
+    0%   { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  .sroi__out { text-align: center; }
+  .sroi__outLabel {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 20px;
+  }
+  .sroi__outNum {
+    font-family: var(--font-display);
+    font-size: clamp(80px, 12vw, 144px);
+    line-height: 0.9;
+    color: var(--gold);
+    font-weight: 500;
+    font-style: italic;
+    letter-spacing: -0.02em;
+  }
+  .sroi__outSub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 15px;
+    color: var(--text-paper-mute);
+    margin-top: 8px;
+  }
+  @media (max-width: 720px) {
+    .sroi__visual { grid-template-columns: 1fr; }
+    .sroi__beam { width: 2px; height: 60px; background: linear-gradient(180deg, var(--gold-deep), var(--gold)); }
+    .sroi__channels { flex-direction: column; }
+    .sroi__beam::after { background: linear-gradient(180deg, transparent, rgba(255,255,255,0.6), transparent); }
+    @keyframes beam { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
+  }
+
+  .channels {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin-top: 32px;
+  }
+  .channel__num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 12px;
+  }
+  .channel__name {
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .channel__desc {
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--text-ink-mute);
+  }
+  @media (max-width: 720px) {
+    .channels { grid-template-columns: 1fr 1fr; }
+  }
+
+  /* ====================================================
+     MATERIALS — downloadable PDFs
+     ==================================================== */
+  .materials {
+    background: var(--ink-deep);
+    color: var(--text-paper);
+    padding: clamp(60px, 10vh, 100px) 0;
+  }
+  .materials__head {
+    margin-bottom: clamp(40px, 6vh, 64px);
+  }
+  .materials__title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 500;
+    line-height: 1.05;
+    margin: 12px 0 0;
+    color: var(--paper);
+  }
+  .materials__title em { color: var(--gold); font-style: italic; }
+  .materials__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--ink-soft);
+    border: 1px solid var(--ink-soft);
+  }
+  .doc {
+    background: var(--ink);
+    padding: 32px 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    position: relative;
+  }
+  .doc:hover {
+    background: var(--ink-mid);
+  }
+  .doc__num {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .doc__title {
+    font-family: var(--font-display);
+    font-size: 26px;
+    color: var(--paper);
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.1;
+  }
+  .doc__title em { color: var(--gold); font-style: italic; }
+  .doc__desc {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-paper-mute);
+    flex: 1;
+  }
+  .doc__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-top: 8px;
+    padding-top: 16px;
+    border-top: 1px solid var(--ink-soft);
+    transition: gap 0.3s ease, color 0.3s ease;
+  }
+  .doc:hover .doc__cta { gap: 18px; color: var(--gold-bright); }
+  .doc__cta .arrow {
+    width: 14px; height: 1px;
+    background: currentColor;
+    position: relative;
+  }
+  .doc__cta .arrow::after {
+    content: "";
+    position: absolute;
+    right: -1px; top: 50%;
+    width: 5px; height: 5px;
+    border-top: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  @media (max-width: 880px) {
+    .materials__grid { grid-template-columns: 1fr; }
+  }
+
+  /* ====================================================
+     JOIN — the audience-tiered CTA
+     ==================================================== */
+  .join {
+    background: var(--ink-deep);
+    position: relative;
+    overflow: hidden;
+  }
+  .join::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1100px; height: 1100px;
+    background: radial-gradient(circle, rgba(201,169,97,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .join__wave {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  .join__head {
+    text-align: left;
+    margin-bottom: clamp(56px, 8vh, 96px);
+    position: relative;
+    z-index: 2;
+  }
+  .join__title {
+    font-family: var(--font-display);
+    font-size: clamp(48px, 8vw, 120px);
+    line-height: 0.95;
+    margin: 16px 0 24px;
+    color: var(--paper);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+  }
+  .join__title em { color: var(--gold); font-style: italic; }
+  .join__deck {
+    font-family: var(--font-display);
+    font-size: clamp(20px, 2.4vw, 28px);
+    line-height: 1.4;
+    color: var(--text-paper-mute);
+    max-width: 60ch;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .pathways {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--ink-soft);
+    border: 1px solid var(--ink-soft);
+    margin-bottom: clamp(56px, 8vh, 96px);
+    position: relative;
+    z-index: 2;
+  }
+  .path {
+    background: var(--ink);
+    padding: 40px 32px 32px;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.4s ease;
+  }
+  .path:hover { background: var(--ink-mid); }
+  .path__label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .path__label::before {
+    content: "";
+    width: 24px; height: 1px;
+    background: var(--gold);
+  }
+  .path__title {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 3vw, 36px);
+    color: var(--paper);
+    font-weight: 500;
+    margin: 0 0 14px;
+    line-height: 1.1;
+  }
+  .path__title em { color: var(--gold); font-style: italic; }
+  .path__copy {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-paper-mute);
+    margin: 0 0 32px;
+    flex: 1;
+  }
+  .path__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    transition: gap 0.3s ease, color 0.3s ease;
+    align-self: flex-start;
+  }
+  .path__cta:hover { gap: 18px; color: var(--gold-bright); }
+  .path__cta .arrow {
+    width: 18px; height: 1px;
+    background: currentColor;
+    position: relative;
+  }
+  .path__cta .arrow::after {
+    content: "";
+    position: absolute;
+    right: 0; top: 50%;
+    width: 6px; height: 6px;
+    border-top: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  @media (max-width: 880px) {
+    .pathways { grid-template-columns: 1fr; }
+  }
+
+  .contact-bar {
+    border-top: 1px solid var(--rule);
+    padding-top: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    position: relative;
+    z-index: 2;
+  }
+  .contact-bar__email {
+    font-family: var(--font-display);
+    font-size: clamp(28px, 4vw, 48px);
+    color: var(--gold);
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  .contact-bar__email:hover { color: var(--gold-bright); }
+  .contact-bar__quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 16px;
+    color: var(--text-paper-mute);
+  }
+
+  /* ====================================================
+     FOOTER
+     ==================================================== */
+  .foot {
+    background: var(--ink-deep);
+    border-top: 1px solid var(--ink-soft);
+    padding: 48px 0 56px;
+    position: relative;
+  }
+  .foot__inner {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .foot__brand {
+    font-family: var(--font-display);
+    font-size: 32px;
+    color: var(--paper);
+    font-weight: 500;
+    line-height: 1;
+  }
+  .foot__brand em { color: var(--gold); font-style: italic; }
+  .foot__tag {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--text-paper-mute);
+    margin-top: 12px;
+  }
+  .foot__group h4 {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 16px;
+    font-weight: 500;
+  }
+  .foot__group ul { list-style: none; padding: 0; margin: 0; }
+  .foot__group li { margin-bottom: 8px; }
+  .foot__group a {
+    font-size: 13px;
+    color: var(--text-paper-mute);
+    transition: color 0.2s ease;
+  }
+  .foot__group a:hover { color: var(--gold); }
+  .foot__credits {
+    margin-top: 40px;
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-paper-mute);
+    /* Slight indent for an editorial colophon feel */
+  }
+  .foot__credits .label {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-style: normal;
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-right: 14px;
+    /* On wide screens the label sits inline; on narrow screens it stacks */
+  }
+  .foot__credits .sep {
+    color: var(--gold);
+    margin: 0 8px;
+    opacity: 0.5;
+    font-style: normal;
+  }
+  .foot__credits a {
+    color: var(--gold);
+    transition: color 0.2s ease;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(201,169,97,0.25);
+    padding-bottom: 1px;
+  }
+  .foot__credits a:hover {
+    color: var(--gold-bright);
+    border-bottom-color: var(--gold-bright);
+  }
+  @media (max-width: 720px) {
+    .foot__credits .label {
+      display: block;
+      margin-bottom: 8px;
+    }
+  }
+  .foot__copy {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--ink-soft);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .foot__copy span {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-paper-mute);
+  }
+  @media (max-width: 880px) {
+    .foot__inner { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .section-marker {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+    border-top: 1px solid var(--rule-paper);
+    border-bottom: 1px solid var(--rule-paper);
+    margin-bottom: 56px;
+  }
+  .opportunity .section-marker,
+  .catalysts .section-marker,
+  .wealth .section-marker,
+  .vision .section-marker,
+  .materials .section-marker {
+    border-color: var(--rule);
+  }
+  .section-marker .left,
+  .section-marker .right {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+  }
+  .paper .section-marker .left,
+  .paper .section-marker .right { color: var(--gold-deep); }
+  .opportunity .section-marker .left,
+  .opportunity .section-marker .right,
+  .catalysts .section-marker .left,
+  .catalysts .section-marker .right,
+  .wealth .section-marker .left,
+  .wealth .section-marker .right,
+  .vision .section-marker .left,
+  .vision .section-marker .right,
+  .materials .section-marker .left,
+  .materials .section-marker .right { color: var(--gold); }
+</style>
+</head>
+<body>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ============================ NAV ============================ -->
+<nav class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="#top" class="brand">TIDE <span class="dot">·</span> KITCHEN</a>
+    <div class="nav__links">
+      <a href="#opportunity">Opportunity</a>
+      <a href="#platform">Platform</a>
+      <a href="#capital">Capital</a>
+      <a href="#materials">Materials</a>
+      <a href="#join">Join</a>
+    </div>
+    <a href="#join" class="nav__cta">Get In Touch</a>
+  </div>
+</nav>
+
+<!-- ============================ HERO ============================ -->
+<header class="hero" id="top">
+  <div class="hero__bg" aria-hidden="true"></div>
+
+  <div class="wrap hero__inner">
+    <div class="hero__topline">
+      <div class="hero__badge reveal">
+        <span class="pulse" aria-hidden="true"></span>
+        Opening 2027 · Founding Cohort
+      </div>
+      <div class="meta meta--mute reveal" data-delay="1">
+        South Shore · Chicago
+      </div>
+    </div>
+
+    <h1 class="hero__title display reveal" data-delay="1">
+      A Rising<br>
+      <em>TIDE.</em>
+    </h1>
+
+    <p class="hero__deck reveal" data-delay="2">
+      The Incubator for QSR Dining Entrepreneurs. Franchising, capital structures, and urban revitalization — engineered to lift founders, corridors, and the community <em>simultaneously.</em>
+    </p>
+
+    <div class="hero__bottom">
+      <div class="hero__quote reveal" data-delay="3">"A rising tide<br>lifts all boats."</div>
+      <div class="hero__stat reveal" data-delay="4">
+        <span class="meta">Annual Recapture</span>
+        <div class="v">$<em data-count="29">0</em>M</div>
+        <div class="l">Dining leakage from South Shore</div>
+      </div>
+      <div class="hero__stat reveal" data-delay="5">
+        <span class="meta">Wealth Multiplier</span>
+        <div class="v"><em>8×–20×</em></div>
+        <div class="l">EV expansion at Wave Stage exit</div>
+      </div>
+      <div class="hero__stat reveal" data-delay="6">
+        <span class="meta">Social ROI</span>
+        <div class="v">$<em>3.06</em></div>
+        <div class="l">Community value per $1 deployed</div>
+      </div>
+    </div>
+  </div>
+
+  <svg class="hero__wave" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,80 C240,40 480,100 720,70 C960,40 1200,90 1440,60 L1440,120 L0,120 Z" fill="#102b44" opacity="0.6"/>
+    <path d="M0,90 C240,60 480,110 720,85 C960,60 1200,100 1440,80 L1440,120 L0,120 Z" fill="#1a3a57" opacity="0.5"/>
+    <path d="M0,100 C300,75 600,115 900,95 C1140,80 1320,105 1440,95 L1440,120 L0,120 Z" fill="#c9a961" opacity="0.18"/>
+  </svg>
+</header>
+
+<!-- ============================ THESIS ============================ -->
+<section class="section paper" id="thesis">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">§ 01 / The Thesis</span>
+      <span class="right">A Place-Based Incubator</span>
+    </div>
+
+    <div class="section__head">
+      <div class="reveal">
+        <div class="eyebrow">Strategic Analysis</div>
+      </div>
+      <h2 class="section__title display reveal" data-delay="1">
+        A blueprint for <em class="accent-teal">equitable, exponential</em> urban wealth creation.
+      </h2>
+    </div>
+
+    <div class="thesis-body">
+      <p class="thesis-lede reveal">
+        <span class="drop">T</span>IDE Kitchen represents a necessary paradigm shift in community economic development. It deliberately discards the paternalistic philanthropic approach of merely sustaining marginalized small businesses — replacing it with a hyper-capitalist, private-equity-styled architecture engineered to forge <em>scalable, category-dominant enterprises</em>.
+      </p>
+      <div class="thesis-detail reveal" data-delay="1">
+        <p>South Shore sits at the epicenter of approximately <strong>$10 billion in adjacent civic and private investment</strong> — including the Obama Presidential Center and the Illinois Quantum Park — yet faces severe speculative pressure that threatens to displace the very residents it should benefit.</p>
+        <p>TIDE Kitchen prepares overlooked QSR entrepreneurs for franchise-grade scale, deploys them as capitalized anchor tenants to underwrite corridor redevelopment, and creates wealth pathways for operators, residents, and the neighborhood itself — ensuring existing residents share, figuratively and literally, in the wealth created.</p>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat reveal">
+        <span class="label">Catchment</span>
+        <div class="v"><em>224K</em>+</div>
+        <div class="l">Retail catchment population across the South Side.</div>
+      </div>
+      <div class="stat reveal" data-delay="1">
+        <span class="label">Median Income</span>
+        <div class="v">$<em>29.5</em>K</div>
+        <div class="l">Top 5% of households earn over $208K on average.</div>
+      </div>
+      <div class="stat reveal" data-delay="2">
+        <span class="label">Vacancy</span>
+        <div class="v"><em>46</em>%</div>
+        <div class="l">Commercial vacancy across the study area corridors.</div>
+      </div>
+      <div class="stat reveal" data-delay="3">
+        <span class="label">Adjacent Capital</span>
+        <div class="v">~$<em>9.95</em>B</div>
+        <div class="l">Combined investment in three mega-developments.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ OPPORTUNITY ============================ -->
+<section class="section opportunity" id="opportunity">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">§ 02 / The Market Opportunity</span>
+      <span class="right">71st Street · South Shore</span>
+    </div>
+
+    <div class="section__head">
+      <div class="reveal"><div class="eyebrow">The Market</div></div>
+      <h2 class="section__title display reveal" data-delay="1">
+        $29M leaks out of South Shore <em>every year.</em>
+      </h2>
+    </div>
+
+    <div class="opportunity__grid">
+      <div class="opportunity__photo reveal">
+        <span class="tag">71st St · Today</span>
+        <img src="assets/img/71st_Today.jpg" alt="71st Street commercial corridor today, showing vacant storefronts" />
+        <div class="badge-stat">
+          <div class="v">224K</div>
+          <div class="l">Catchment Population</div>
+        </div>
+      </div>
+
+      <div class="opportunity__points">
+        <div class="point reveal" data-delay="1">
+          <div class="point__label">— Untapped Demand</div>
+          <div class="point__body">A massive gap in <strong>high-quality fast-casual dining</strong> on the corridor's primary arteries.</div>
+        </div>
+        <div class="point reveal" data-delay="2">
+          <div class="point__label">— Untapped Talent</div>
+          <div class="point__body">High-potential operators restricted by the lack of <strong>institutional infrastructure.</strong></div>
+        </div>
+        <div class="point reveal" data-delay="3">
+          <div class="point__label">— Revenue Retention</div>
+          <div class="point__body">Reclaiming spend currently leaking to <strong>non-local chains</strong> and adjacent neighborhoods.</div>
+        </div>
+        <div class="point reveal" data-delay="4">
+          <div class="point__label">— Momentum</div>
+          <div class="point__body">Leveraging the reinvestment influx to secure <strong>"early-in"</strong> community wealth and asset appreciation.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="leakage reveal">
+      <div class="leakage__row">
+        <div class="leakage__num">01 /</div>
+        <div class="leakage__cat">General Merchandise</div>
+        <div class="leakage__amt">> $69.0M</div>
+        <div class="leakage__imp">Profound demand for diverse, multi-category retail anchors and daily-necessity providers.</div>
+      </div>
+      <div class="leakage__row">
+        <div class="leakage__num">02 /</div>
+        <div class="leakage__cat">Grocery & Produce</div>
+        <div class="leakage__amt">$47.0M</div>
+        <div class="leakage__imp">Severe food-desert conditions; demand for fresh provisions and localized markets.</div>
+      </div>
+      <div class="leakage__row">
+        <div class="leakage__num">03 /</div>
+        <div class="leakage__cat">Restaurants & Eating</div>
+        <div class="leakage__amt">$29.0M</div>
+        <div class="leakage__imp">Massive unmet demand for high-quality QSR and fast-casual dining concepts.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ VISION (before/after) ============================ -->
+<section class="section vision">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">§ 03 / The Vision</span>
+      <span class="right">71st Street · Reactivated</span>
+    </div>
+    <div class="vision__head reveal">
+      <div class="eyebrow" style="justify-content:center;">A Corner Reimagined</div>
+      <h2 class="vision__title">From vacancy <em>to vitality.</em></h2>
+      <p class="vision__deck">The same intersection. A different future. TIDE Kitchen's anchor facility transforms a shuttered hardware row into a three-kitchen incubator with patio dining, residential floors above, and a corridor catalyst that pulls adjacent development with it.</p>
+    </div>
+  </div>
+
+  <div class="vision__compare reveal">
+    <div class="vision__panel">
+      <img src="assets/img/71st_Today.jpg" alt="71st Street today: vacant storefronts and a parked sedan" />
+      <div class="vision__caption">
+        <div>
+          <div class="vision__caption-label">— Before</div>
+          <div class="vision__caption-title">71st Street Today</div>
+        </div>
+        <div class="vision__year">2026</div>
+      </div>
+    </div>
+    <div class="vision__panel">
+      <img src="assets/img/CORNER_UPDATE.png" alt="71st Street reimagined: TIDE Kitchen anchor facility with patio dining" />
+      <div class="vision__caption">
+        <div>
+          <div class="vision__caption-label">— After</div>
+          <div class="vision__caption-title">TIDE Kitchen Anchor</div>
+        </div>
+        <div class="vision__year">2027</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CATALYSTS ============================ -->
+<section class="section catalysts" id="catalysts">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">§ 04 / Pressure & Catalysts</span>
+      <span class="right">~$9.95B Adjacent Capital</span>
+    </div>
+
+    <div class="section__head">
+      <div class="reveal"><div class="eyebrow">The Mega-Development Supercycle</div></div>
+      <h2 class="section__title display reveal" data-delay="1">
+        Speculation arrives <em class="accent-teal">before opportunity does.</em>
+      </h2>
+    </div>
+
+    <p class="reveal" data-delay="2" style="font-family:var(--font-display);font-size:clamp(20px, 2.4vw, 28px);max-width:60ch;color:var(--text-paper-mute);font-weight:400;line-height:1.4;margin:0;">
+      Three catalysts. Roughly $10 billion in adjacent capital — restructuring South Side tourism, employment, and real-estate dynamics in a single decade.
+    </p>
+
+    <div class="cat-grid">
+
+      <!-- Obama Presidential Center -->
+      <div class="cat reveal">
+        <div class="cat__viz">
+          <img src="assets/img/OPC.png" alt="Obama Presidential Center, Jackson Park, Chicago" loading="lazy" />
+          <span class="loc-tag">Jackson Park</span>
+        </div>
+        <div class="cat__body">
+          <div class="cat__amount">$850M</div>
+          <div>
+            <div class="cat__name">Obama Presidential Center</div>
+            <div class="cat__loc">Jackson Park · Adjacent</div>
+          </div>
+          <div class="cat__copy">750K annual visitors. $220M projected annual economic impact. Restructures South Side tourism flows.</div>
+        </div>
+      </div>
+
+      <!-- Illinois Quantum Park -->
+      <div class="cat reveal" data-delay="1">
+        <div class="cat__viz">
+          <img src="assets/img/IQMP.jpg" alt="Illinois Quantum & Microelectronics Park, South Works campus aerial view with PsiQuantum facilities and Chicago skyline" loading="lazy" />
+          <span class="loc-tag">South Works</span>
+        </div>
+        <div class="cat__body">
+          <div class="cat__amount">$9B</div>
+          <div>
+            <div class="cat__name">Illinois Quantum & Microelectronics Park</div>
+            <div class="cat__loc">South Works · 440 Acres</div>
+          </div>
+          <div class="cat__copy">$700M state funding. PsiQuantum & IBM. 175,000 projected jobs. $60B long-term impact.</div>
+        </div>
+      </div>
+
+      <!-- Regal Mile Studios -->
+      <div class="cat reveal" data-delay="2">
+        <div class="cat__viz">
+          <img src="assets/img/RegalMile.webp" alt="Regal Mile Studios rendering — film studio campus at 79th and Stony Island" loading="lazy" />
+          <span class="loc-tag">79th & Stony Island</span>
+        </div>
+        <div class="cat__body">
+          <div class="cat__amount">$100M</div>
+          <div>
+            <div class="cat__name">Regal Mile Studios</div>
+            <div class="cat__loc">79th & Stony Island</div>
+          </div>
+          <div class="cat__copy">380K sq ft media campus. The "Hollywood of the Midwest." Hundreds of production jobs.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="pressure reveal">
+      <div class="pressure__item">
+        <div class="pressure__num">130%</div>
+        <div class="pressure__name">Home Price Increase</div>
+        <div class="pressure__desc">Driven by speculative buying ahead of the Obama Presidential Center.</div>
+      </div>
+      <div class="pressure__item">
+        <div class="pressure__num">43%</div>
+        <div class="pressure__name">Rental Rate Surge</div>
+        <div class="pressure__desc">Recent years across South Shore — outpacing wage growth.</div>
+      </div>
+      <div class="pressure__item">
+        <div class="pressure__num">255%</div>
+        <div class="pressure__name">Property Tax Spike</div>
+        <div class="pressure__desc">Documented case, 71st Street commercial parcel, 2022–2025.</div>
+      </div>
+      <div class="pressure__item">
+        <div class="pressure__num">⅓</div>
+        <div class="pressure__name">Investor Purchases</div>
+        <div class="pressure__desc">Of all 2022 home sales went to out-of-state buyers — highest rate citywide.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ PIPELINE ============================ -->
+<section class="section pipeline" id="platform">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">§ 05 / The Platform</span>
+      <span class="right">Four-Stage Pipeline</span>
+    </div>
+
+    <div class="section__head">
+      <div class="reveal"><div class="eyebrow">From Kitchen to Category Killer</div></div>
+      <h2 class="section__title display reveal" data-delay="1">
+        Three kitchens. One stage. <em class="accent-teal">Zero existential risk.</em>
+      </h2>
+    </div>
+
+    <p class="reveal" data-delay="2" style="font-family:var(--font-display);font-size:clamp(18px,2vw,22px);max-width:70ch;color:var(--text-ink-mute);font-weight:400;line-height:1.5;margin:0 0 80px;">
+      To transition local culinary talent into institutional-grade franchise operators, TIDE Kitchen employs a four-stage pipeline. Each stage is engineered to systematically eliminate the operational, financial, and infrastructure bottlenecks that typically cause early-stage food enterprises to fail.
+    </p>
+
+    <!-- STAGE 01 — Pool -->
+    <div class="stage-feature reveal">
+      <div class="stage-feature__media">
+        <img src="assets/img/INCUBATOR_STALLS.png" alt="TIDE Pool incubator interior — three professional-grade kitchen stalls with menu boards" />
+        <div class="corner"><em>Stage 01</em>The Incubator</div>
+      </div>
+      <div class="stage-feature__body">
+        <div class="stage-feature__phase">Stage 01 · The Flight Simulator</div>
+        <h3 class="stage-feature__title">TIDE <em>Pool</em></h3>
+        <div class="stage-feature__sub">The Incubator</div>
+        <p class="stage-feature__copy">
+          A state-of-the-art facility with three independent professional-grade kitchens in a shared dining environment. Operators craft fresh QSR concepts that resonate with the community — built with franchise-ready SOPs from Day 1, engineered for multi-unit replicability.
+        </p>
+        <div class="stage-feature__metric">
+          <div class="v"><em>8–10%</em></div>
+          <div class="l">Sales Fee in Lieu of Rent</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STAGE 02 — Anchor -->
+    <div class="stage-feature stage-feature--reverse reveal">
+      <div class="stage-feature__media">
+        <img src="assets/img/EXTERIOR_STOREFRONT.png" alt="TIDE Anchor exterior storefront — South Shore Restaurant and Bennett Food Hall" />
+        <div class="corner"><em>Stage 02</em>Corridor Integration</div>
+      </div>
+      <div class="stage-feature__body">
+        <div class="stage-feature__phase">Stage 02 · The Strategic Catalyst</div>
+        <h3 class="stage-feature__title">TIDE <em>Anchor</em></h3>
+        <div class="stage-feature__sub">Corridor Integration</div>
+        <p class="stage-feature__copy">
+          A graduating TIDE operator does not arrive at a developer's door as a high-risk independent restaurant. They arrive pre-funded, with audited Flight Simulator unit economics and a multi-year capital runway. That single fact transforms what kind of real estate gets built around them.
+        </p>
+        <div class="stage-feature__metric">
+          <div class="v">$<em>2–4M</em></div>
+          <div class="l">Adjacent Development Per Lease</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stages-compact">
+      <div class="stage-card reveal">
+        <div class="stage-card__phase">Stage 03 · Multi-Unit Expansion</div>
+        <h3 class="stage-card__title">TIDE <em>Current</em></h3>
+        <div class="stage-card__sub">Multi-Unit Scale</div>
+        <p class="stage-card__copy">
+          Stress test before you franchise. Centralized HR, supply chain, accounting, and marketing services protect unit-level EBITDA across 3–10 locations — and prepare the operator for the next leg of expansion.
+        </p>
+        <div class="stage-card__metric">
+          <div class="v"><em>3–10</em></div>
+          <div class="l">Units · Shared Ops</div>
+        </div>
+      </div>
+      <div class="stage-card reveal" data-delay="1">
+        <div class="stage-card__phase">Stage 04 · Franchise Execution</div>
+        <h3 class="stage-card__title">TIDE <em>Wave</em></h3>
+        <div class="stage-card__sub">From Cash Flow to Category Killer</div>
+        <p class="stage-card__copy">
+          For concepts with breakout potential, TIDE deploys growth capital to execute the franchise model. FDD navigation, equity alignment, and the activation of the wealth multiplier — life-changing exits.
+        </p>
+        <div class="stage-card__metric">
+          <div class="v"><em>Exit</em></div>
+          <div class="l">Liquidity Event</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="multiplier reveal">
+      <div class="multiplier__num">8×–20×</div>
+      <div class="multiplier__body">
+        <div class="multiplier__label">— The Wealth Multiplier</div>
+        <h3 class="multiplier__title">From cash flow to <em>category killer.</em></h3>
+        <p class="multiplier__copy">A single-unit operator generating $150K in earnings sells for roughly $450K–$700K on an SDE basis. A 15-unit portfolio generating $2M in normalized EBITDA, valued at an institutional 8.0× EV/EBITDA multiple, commands $16M — a 32× expansion in equity value driven entirely by structural professionalization.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ CAPITAL ============================ -->
+<section class="section capital" id="capital">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">§ 06 / Capital Toolkit</span>
+      <span class="right">Six Instruments · Four Stages</span>
+    </div>
+
+    <div class="section__head">
+      <div class="reveal"><div class="eyebrow">Financial Engineering</div></div>
+      <h2 class="section__title display reveal" data-delay="1">
+        A capital stack <em class="accent-teal">for every stage.</em>
+      </h2>
+    </div>
+
+    <p class="reveal" data-delay="2" style="font-family:var(--font-display);font-size:clamp(18px,2vw,22px);max-width:70ch;color:var(--text-ink-mute);font-weight:400;line-height:1.5;margin:0;">
+      Traditional commercial bank lending — collateral-heavy, fully amortizing, founder-guaranteed — strangles early-stage QSR cash flow. The Capital Toolkit sequences six distinct instruments across the four-stage pipeline, each calibrated to the operator's risk profile and growth phase.
+    </p>
+
+    <div class="toolkit">
+      <div class="toolkit__row reveal">
+        <div class="num">01 /</div>
+        <div class="name">ROBS<span class="sub">Retirement Rollover</span></div>
+        <div class="stage-tags"><span class="tag on">Pool</span><span class="tag">Anchor</span><span class="tag">Current</span><span class="tag">Wave</span></div>
+        <div class="desc">Initial debt-free founder equity injection without monthly debt service. Tax-advantaged rollover structure unlocking retirement capital for franchise financing.</div>
+      </div>
+      <div class="toolkit__row reveal">
+        <div class="num">02 /</div>
+        <div class="name">Grants<span class="sub">Non-Dilutive</span></div>
+        <div class="stage-tags"><span class="tag on">Pool</span><span class="tag on">Anchor</span><span class="tag">Current</span><span class="tag">Wave</span></div>
+        <div class="desc">Up to $250K in reimbursement grants for build-out and hiring. Municipal, non-profit, philanthropic, and venture-aligned sources.</div>
+      </div>
+      <div class="toolkit__row reveal">
+        <div class="num">03 /</div>
+        <div class="name">BDC <em>Debt</em><span class="sub">Convertible Note</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag">Wave</span></div>
+        <div class="desc">Brick-and-mortar transition with founder-friendly repayment. Interest-only, PIK-flexible, convertible — operators can pay down for total independence or convert if the brand breaks out.</div>
+      </div>
+      <div class="toolkit__row reveal">
+        <div class="num">04 /</div>
+        <div class="name">Community <em>Co-Invest</em><span class="sub">SDIRA · Reg CF</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
+        <div class="desc">Up to $5M / 12 months. Channels neighborhood retirement and retail capital into the corridor — localized ownership with shared upside.</div>
+      </div>
+      <div class="toolkit__row reveal">
+        <div class="num">05 /</div>
+        <div class="name">Venture <em>Equity</em><span class="sub">Direct Investment</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
+        <div class="desc">Funds franchise infrastructure ahead of the wealth multiplier. Multi-unit expansion plus executive support for institutional-grade scale.</div>
+      </div>
+      <div class="toolkit__row reveal">
+        <div class="num">06 /</div>
+        <div class="name">QOZ <em>Funds</em><span class="sub">Tax-Advantaged</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
+        <div class="desc">External investor demand routed into operators and real estate. Capital-gains deferral with the 90% asset rule.</div>
+      </div>
+    </div>
+
+    <div class="recycling reveal">
+      <div class="recycling__icon">↻</div>
+      <div class="recycling__body">
+        <h4 class="recycling__title"><em>Perpetual</em> Capital Recycling</h4>
+        <p class="recycling__copy">A designated share of platform profits, BDC interest, and exit proceeds is systematically returned to the fund — leveling up ongoing fundraising to finance the next cohort of community-born brands and ensuring the ecosystem compounds over time rather than depleting.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ WEALTH DISTRIBUTED ============================ -->
+<section class="section wealth" id="wealth">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">§ 07 / Wealth, Distributed</span>
+      <span class="right">Three Audiences · Three Vehicles</span>
+    </div>
+
+    <div class="section__head">
+      <div class="reveal"><div class="eyebrow">Beyond the Founder</div></div>
+      <h2 class="section__title display reveal" data-delay="1">
+        Wealth, <em>distributed.</em>
+      </h2>
+    </div>
+
+    <p class="wealth__lead reveal" data-delay="2">
+      A capitalized anchor unlocks the next building. Each anchor lease unlocks <em>~$2–4M of adjacent development</em> that would not otherwise pencil — and that wealth gets shared three ways.
+    </p>
+
+    <div class="audiences">
+      <div class="aud reveal">
+        <div class="aud__label">— Founder</div>
+        <h3 class="aud__title">The Operator</h3>
+        <div class="aud__hook">Equity in the brand they built.</div>
+        <p class="aud__copy">Captures the 8×–20× wealth multiplier at the Wave Stage exit. The headline outcome — but not the only one. Operators retain meaningful equity through a real liquidity event.</p>
+      </div>
+      <div class="aud reveal" data-delay="1">
+        <div class="aud__label">— Neighbors</div>
+        <h3 class="aud__title">The Community</h3>
+        <div class="aud__hook">Direct equity in the local brand.</div>
+        <p class="aud__copy">South Shore residents invest through SDIRAs and Reg CF — sharing in the upside of the corridor's resurgence as owners, not just patrons.</p>
+      </div>
+      <div class="aud reveal" data-delay="2">
+        <div class="aud__label">— Residents</div>
+        <h3 class="aud__title">The Neighborhood</h3>
+        <div class="aud__hook">Anchored property, expanded supply.</div>
+        <p class="aud__copy">Activated storefronts and infill housing absorb growth without displacement — letting long-term residents stay and benefit from the appreciation around them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ SROI ============================ -->
+<section class="section sroi">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">§ 08 / Social ROI</span>
+      <span class="right">Beyond Financial Return</span>
+    </div>
+
+    <div class="section__head">
+      <div class="reveal"><div class="eyebrow">Beyond Financial Return</div></div>
+      <h2 class="section__title display reveal" data-delay="1">
+        One dollar in. <em class="accent-teal">Three dollars of economic value out.</em>
+      </h2>
+    </div>
+
+    <p class="reveal" data-delay="2" style="font-family:var(--font-display);font-size:clamp(18px,2vw,22px);max-width:70ch;color:var(--text-ink-mute);font-weight:400;line-height:1.5;margin:0;">
+      SROI methodology assigns standardized, research-verified dollar values to outcomes that traditional accounting cannot measure. Aggregated studies of high-functioning community development initiatives place the leverage between $2.79 and $3.06 of monetized social value per dollar invested.
+    </p>
+
+    <div class="sroi__visual reveal" data-delay="3">
+      <div class="sroi__in">
+        <div class="sroi__inLabel">— Capital In</div>
+        <div class="sroi__inNum">$1</div>
+        <div class="sroi__inSub">deployed</div>
+      </div>
+      <div class="sroi__channels" aria-hidden="true">
+        <div class="sroi__beam"></div>
+        <div class="sroi__beam"></div>
+        <div class="sroi__beam"></div>
+        <div class="sroi__beam"></div>
+      </div>
+      <div class="sroi__out">
+        <div class="sroi__outLabel">— Community Value Out</div>
+        <div class="sroi__outNum">$3.06</div>
+        <div class="sroi__outSub">monetized social return</div>
+      </div>
+    </div>
+
+    <div class="channels">
+      <div class="channel reveal">
+        <div class="channel__num">Channel 01</div>
+        <div class="channel__name">Property Tax Base</div>
+        <div class="channel__desc">Activated storefronts increase adjacent residential and commercial valuations.</div>
+      </div>
+      <div class="channel reveal" data-delay="1">
+        <div class="channel__num">Channel 02</div>
+        <div class="channel__name">Local Employment</div>
+        <div class="channel__desc">QSR hiring reduces unemployment and downstream social safety net spending.</div>
+      </div>
+      <div class="channel reveal" data-delay="2">
+        <div class="channel__num">Channel 03</div>
+        <div class="channel__name">Health & Safety</div>
+        <div class="channel__desc">Stable employment correlates with improved physical and mental health outcomes.</div>
+      </div>
+      <div class="channel reveal" data-delay="3">
+        <div class="channel__num">Channel 04</div>
+        <div class="channel__name">Capital Retention</div>
+        <div class="channel__desc">Locally owned businesses circulate dollars within the neighborhood rather than exporting them.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ MATERIALS ============================ -->
+<section class="section materials" id="materials">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">§ 09 / Materials</span>
+      <span class="right">For Download</span>
+    </div>
+
+    <div class="materials__head reveal">
+      <div class="eyebrow">For Stakeholders & Partners</div>
+      <h2 class="materials__title">The full <em>dossier.</em></h2>
+    </div>
+
+    <div class="materials__grid">
+      <a class="doc reveal" href="assets/docs/TIDE_Kitchen_Executive_Summary_04_26.pdf" target="_blank" rel="noopener" download>
+        <div class="doc__num">01 / Brief</div>
+        <h3 class="doc__title">Executive <em>Summary</em></h3>
+        <p class="doc__desc">A one-page overview of the thesis, platform, capital structure, and wealth distribution model. The fastest read.</p>
+        <span class="doc__cta"><span>Download PDF</span><span class="arrow"></span></span>
+      </a>
+      <a class="doc reveal" data-delay="1" href="assets/docs/TIDE_Kitchen_Deck_04_26.pdf" target="_blank" rel="noopener" download>
+        <div class="doc__num">02 / Deck</div>
+        <h3 class="doc__title">Pitch <em>Deck</em></h3>
+        <p class="doc__desc">The investor- and partner-facing presentation — market opportunity, four-stage pipeline, capital toolkit, and the wealth multiplier.</p>
+        <span class="doc__cta"><span>Download PDF</span><span class="arrow"></span></span>
+      </a>
+      <a class="doc reveal" data-delay="2" href="assets/docs/TIDE_Kitchen_Analysis_Report_04_26.pdf" target="_blank" rel="noopener" download>
+        <div class="doc__num">03 / Report</div>
+        <h3 class="doc__title">Strategic <em>Analysis</em></h3>
+        <p class="doc__desc">The full strategic analysis — macro dynamics, exit comparables, financial engineering, and SROI methodology with sources.</p>
+        <span class="doc__cta"><span>Download PDF</span><span class="arrow"></span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============================ JOIN ============================ -->
+<section class="section join" id="join">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">§ 10 / Opening 2027</span>
+      <span class="right">Founding Cohort</span>
+    </div>
+
+    <div class="join__head">
+      <div class="eyebrow reveal">Opening 2027 · Founding Cohort</div>
+      <h2 class="join__title reveal" data-delay="1">Join the <em>TIDE.</em></h2>
+      <p class="join__deck reveal" data-delay="2">
+        Investment, advisory, and partnership opportunities are open to those who want to build category-defining brands and a more equitable South Shore — at the same time.
+      </p>
+    </div>
+
+    <div class="pathways">
+      <div class="path reveal">
+        <div class="path__label">For Investors</div>
+        <h3 class="path__title">Capital that <em>compounds.</em></h3>
+        <p class="path__copy">Institutional, family office, and OZ-fund capital across debt, equity, and convertible vehicles. Co-invest alongside operators built for franchise scale from Day 1.</p>
+        <a href="mailto:hello@tide.kitchen?subject=Investor%20Inquiry" class="path__cta">
+          <span>Request the Pitch Deck</span>
+          <span class="arrow"></span>
+        </a>
+      </div>
+      <div class="path reveal" data-delay="1">
+        <div class="path__label">For Partners</div>
+        <h3 class="path__title">Build the platform <em>with us.</em></h3>
+        <p class="path__copy">Industry expertise, non-profit collaboration, developer alignment, and corporate sponsorship. The four-stage pipeline depends on aligned partners at every stage.</p>
+        <a href="mailto:hello@tide.kitchen?subject=Partnership%20Inquiry" class="path__cta">
+          <span>Explore Partnership</span>
+          <span class="arrow"></span>
+        </a>
+      </div>
+      <div class="path reveal" data-delay="2">
+        <div class="path__label">For the Community</div>
+        <h3 class="path__title">Own a stake <em>next door.</em></h3>
+        <p class="path__copy">SDIRA and Reg CF pathways for South Shore residents to invest directly in local operators — sharing in the upside of the corridor as owners, not just patrons.</p>
+        <a href="mailto:hello@tide.kitchen?subject=Community%20Investor%20Interest" class="path__cta">
+          <span>Join the Co-Invest List</span>
+          <span class="arrow"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-bar reveal">
+      <a href="mailto:hello@tide.kitchen" class="contact-bar__email">hello@tide.kitchen</a>
+      <div class="contact-bar__quote">"A rising tide lifts all boats."</div>
+    </div>
+  </div>
+
+  <svg class="join__wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,80 C240,40 480,100 720,70 C960,40 1200,90 1440,60 L1440,140 L0,140 Z" fill="#102b44" opacity="0.5"/>
+    <path d="M0,100 C300,75 600,115 900,95 C1140,80 1320,105 1440,95 L1440,140 L0,140 Z" fill="#c9a961" opacity="0.18"/>
+  </svg>
+</section>
+
+<!-- ============================ FOOT ============================ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <div>
+        <div class="foot__brand">TIDE <em>Kitchen.</em></div>
+        <div class="foot__tag">"A rising tide lifts all boats."</div>
+        <div class="meta meta--mute" style="margin-top:32px;">
+          71st Street · South Shore<br>
+          Chicago, Illinois<br>
+          Opening 2027
+        </div>
+      </div>
+      <div class="foot__group">
+        <h4>Materials</h4>
+        <ul>
+          <li><a href="assets/docs/TIDE_Kitchen_Executive_Summary_04_26.pdf" target="_blank" rel="noopener">Executive Summary</a></li>
+          <li><a href="assets/docs/TIDE_Kitchen_Deck_04_26.pdf" target="_blank" rel="noopener">Pitch Deck</a></li>
+          <li><a href="assets/docs/TIDE_Kitchen_Analysis_Report_04_26.pdf" target="_blank" rel="noopener">Strategic Analysis</a></li>
+        </ul>
+      </div>
+      <div class="foot__group">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hello@tide.kitchen">hello@tide.kitchen</a></li>
+          <li><a href="#join">Investor Inquiries</a></li>
+          <li><a href="#join">Partner Inquiries</a></li>
+          <li><a href="#join">Community Co-Invest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__credits">
+      <span class="label">— Image Credits</span>
+      All Renderings: <a href="https://future-firm.org" target="_blank" rel="noopener">Future Firm</a><span class="sep">//</span>"71st St Today": Photograph by Jacob Yeung for <a href="https://fortune.com/2019/05/30/chicago-south-shore-middle-class/" target="_blank" rel="noopener">Fortune</a><span class="sep">//</span>Obama Presidential Center: <a href="https://www.obama.org/visit/grand-opening/" target="_blank" rel="noopener">Obama Foundation</a><span class="sep">//</span>Illinois Quantum &amp; Microelectronics Park: <a href="https://theljc.com/work/mission-critical#" target="_blank" rel="noopener">Lamar Johnson Collaborative</a>
+    </div>
+    <div class="foot__copy">
+      <span>© 2026 TIDE Kitchen · All Rights Reserved</span>
+      <span>South Shore · Chicago</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ---------- Nav scroll state ---------- */
+  (function(){
+    var nav = document.getElementById('nav');
+    var scrolled = false;
+    function onScroll() {
+      var s = window.scrollY > 24;
+      if (s !== scrolled) {
+        scrolled = s;
+        nav.classList.toggle('is-scrolled', s);
+      }
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+
+  /* ---------- Reveal on scroll ---------- */
+  (function(){
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  })();
+
+  /* ---------- Count-up on hero $29 stat ---------- */
+  (function(){
+    var el = document.querySelector('[data-count]');
+    if (!el) return;
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var started = false;
+    function run() {
+      if (started) return; started = true;
+      var start = null;
+      var dur = 1400;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting) { run(); io.disconnect(); }});
+      }, { threshold: 0.5 });
+      io.observe(el);
+    } else {
+      run();
+    }
+  })();
+</script>
+
+</body>
+</html>
