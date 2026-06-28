@@ -4,14 +4,14 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<title>Request Materials — TIDE Kitchen</title>
+<title>Investor &amp; Partner Inquiry — TIDE Kitchen</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink-deep:#061726; --ink:#0a1f33; --ink-mid:#102b44; --ink-soft:#1a3a57;
-    --paper:#f5f1e8; --gold:#c9a961; --gold-bright:#d9bb74; --teal:#4a8a9e;
+    --paper:#f5f1e8; --gold:#c9a961; --teal:#4a8a9e;
     --text-paper:#efe9d9; --text-paper-mute:rgba(239,233,217,0.62);
     --font-display:'EB Garamond','Times New Roman',Georgia,serif;
     --font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
@@ -29,7 +29,7 @@
   .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
   h1{font-family:var(--font-display); font-weight:500; font-size:clamp(34px,6vw,56px); line-height:1.04; letter-spacing:-.01em; margin-bottom:18px;}
   h1 em{color:var(--gold); font-style:italic;}
-  .lead{color:var(--text-paper-mute); font-size:clamp(16px,2vw,18px); line-height:1.6; max-width:620px; margin-bottom:40px;}
+  .lead{color:var(--text-paper-mute); font-size:clamp(16px,2vw,18px); line-height:1.6; max-width:640px; margin-bottom:40px;}
   form{display:grid; gap:20px; max-width:680px;}
   .rowf{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
   .field{display:flex; flex-direction:column; gap:8px;}
@@ -40,10 +40,8 @@
   .field input:focus,.field select:focus,.field textarea:focus{outline:none; border-color:var(--gold);}
   .field select{appearance:none; -webkit-appearance:none; cursor:pointer;}
   .field textarea{min-height:104px; resize:vertical;}
-  .opts{display:flex; flex-wrap:wrap; gap:14px 22px; padding-top:4px;}
-  .opt,.ack{display:flex; gap:10px; align-items:flex-start; font-size:14px; color:var(--text-paper); line-height:1.5;}
-  .ack{font-size:13px; color:var(--text-paper-mute);}
-  .opt input,.ack input{margin-top:3px; accent-color:var(--gold);}
+  .ack{display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--text-paper-mute); line-height:1.5;}
+  .ack input{margin-top:3px; accent-color:var(--gold);}
   .submit{justify-self:start; margin-top:6px; background:var(--gold); color:var(--ink); border:none; border-radius:30px; padding:15px 36px; font-family:var(--font-body); font-weight:600; font-size:15px; cursor:pointer; transition:opacity .2s;}
   .submit:hover{opacity:.9;}
   .fine{font-size:12px; color:var(--text-paper-mute); margin-top:2px; line-height:1.55;}
@@ -60,12 +58,12 @@
   </div>
 
   <main>
-    <div class="eyebrow">Confidential · By Request</div>
-    <h1>Request the <em>materials.</em></h1>
-    <p class="lead">The executive summary, investor deck, and strategic analysis are confidential and shared with qualified investors and partners on request. Share a few details and we’ll send the relevant documents.</p>
+    <div class="eyebrow">For Qualified Investors &amp; Partners</div>
+    <h1>Let&rsquo;s <em>talk.</em></h1>
+    <p class="lead">We work with aligned investors and partners directly. Share a few details about yourself and we&rsquo;ll follow up to discuss the opportunity and the right next steps. Anything we share is provided confidentially, on a one-to-one basis.</p>
 
     <form action="https://formspree.io/f/mkolbegy" method="POST">
-      <input type="hidden" name="_subject" value="New investor-materials request — tide.kitchen">
+      <input type="hidden" name="_subject" value="New investor / partner inquiry — tide.kitchen">
       <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
       <div class="rowf">
         <div class="field"><label for="rq-name">Full name</label><input id="rq-name" name="name" type="text" required placeholder="Your name"></div>
@@ -73,16 +71,15 @@
       </div>
       <div class="rowf">
         <div class="field"><label for="rq-org">Organization / firm</label><input id="rq-org" name="organization" type="text" placeholder="Optional"></div>
-        <div class="field"><label for="rq-type">I’m a…</label>
-          <select id="rq-type" name="investor_type">
-            <option value="">Select…</option>
+        <div class="field"><label for="rq-type">I&rsquo;m a&hellip;</label>
+          <select id="rq-type" name="inquirer_type">
+            <option value="">Select&hellip;</option>
             <option>Family office</option>
             <option>Foundation / impact investor</option>
             <option>Angel / individual investor</option>
             <option>Institutional / fund</option>
             <option>Operating / franchise partner</option>
             <option>Advisor</option>
-            <option>Community / resident investor</option>
             <option>Other</option>
           </select>
         </div>
@@ -90,25 +87,27 @@
       <div class="rowf">
         <div class="field"><label for="rq-acc">Accredited investor?</label>
           <select id="rq-acc" name="accredited">
-            <option value="">Select…</option>
+            <option value="">Select&hellip;</option>
             <option>Yes</option>
             <option>No</option>
             <option>Not sure</option>
             <option>Not applicable</option>
           </select>
         </div>
-        <div class="field"><label>Materials requested</label>
-          <div class="opts">
-            <label class="opt"><input type="checkbox" name="materials" value="Executive Summary"> Executive Summary</label>
-            <label class="opt"><input type="checkbox" name="materials" value="Pitch Deck"> Pitch Deck</label>
-            <label class="opt"><input type="checkbox" name="materials" value="Strategic Analysis"> Strategic Analysis</label>
-          </div>
+        <div class="field"><label for="rq-int">Nature of interest</label>
+          <select id="rq-int" name="interest">
+            <option value="">Select&hellip;</option>
+            <option>Investment</option>
+            <option>Partnership</option>
+            <option>Advisory</option>
+            <option>General / learning more</option>
+          </select>
         </div>
       </div>
-      <div class="field full"><label for="rq-msg">Anything else?</label><textarea id="rq-msg" name="message" placeholder="A little context on your interest (optional)"></textarea></div>
-      <label class="ack"><input type="checkbox" name="confidentiality_ack" value="agreed" required> I understand these materials are confidential and agree not to distribute or reproduce them.</label>
-      <button class="submit" type="submit">Request materials</button>
-      <p class="fine">We’ll review and follow up by email. Submitting does not create an offer, solicitation, or commitment. By submitting, you consent to TIDE Kitchen contacting you about your request.</p>
+      <div class="field full"><label for="rq-msg">Tell us a little about your interest</label><textarea id="rq-msg" name="message" placeholder="Optional — a few words on what you&rsquo;re looking for"></textarea></div>
+      <label class="ack"><input type="checkbox" name="confidentiality_ack" value="agreed" required> I understand any materials TIDE Kitchen may share are confidential, and I agree not to distribute or reproduce them.</label>
+      <button class="submit" type="submit">Submit inquiry</button>
+      <p class="fine">We&rsquo;ll review and follow up by email. Submitting does not create an offer, solicitation, or commitment, and is not investment advice. Any materials are shared at TIDE Kitchen&rsquo;s discretion and only as appropriate. By submitting, you consent to TIDE Kitchen contacting you about your inquiry.</p>
     </form>
   </main>
 
