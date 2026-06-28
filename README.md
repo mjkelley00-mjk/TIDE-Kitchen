@@ -3,13 +3,19 @@
 A single-page editorial site for TIDE Kitchen — South Shore, Chicago.
 Opening 2027.
 
+> **Update — June 2026.** The investor/partner materials are no longer public downloads.
+> The "Materials" section is now **request-gated**: a confidentiality-acknowledged form
+> (powered by Formspree, posting to `hello@tide.kitchen`) collects requester details, and
+> documents are shared privately on request. The previous PDFs were **removed from
+> `assets/docs/`** — a public repo serves files by direct URL even when nothing links to
+> them, so confidential materials are not kept in the repo.
+
 > **Update — May 2026.** Stages 03 (Current) and 04 (Wave) now use the full
 > image+text `stage-feature` layout, matching Stages 01–02. Stage 03 carries the
 > "71st Street Ramen" interior from the deck (`CURRENT_RAMEN.jpg`); Stage 04 uses an
 > inline SVG of the EV/SDE wealth-multiplier curve (the deck's Stage 04 visual) since
 > no photographic render exists for that stage. The old `.stages-compact` card layout
-> was removed. Also renamed the deck PDF to `TIDE_Kitchen_Deck_04_26.pdf` to fix a
-> broken download link (the file previously had spaces in its name).
+> was removed.
 
 ## Structure
 
@@ -18,10 +24,6 @@ tide-kitchen-site/
 ├── index.html                  ← the entire site (HTML, CSS, JS — single file)
 ├── README.md                   ← this file
 └── assets/
-    ├── docs/
-    │   ├── TIDE_Kitchen_Executive_Summary_04_26.pdf
-    │   ├── TIDE_Kitchen_Deck_04_26.pdf
-    │   └── TIDE_Kitchen_Analysis_Report_04_26.pdf
     └── img/
         ├── 71st_Today.jpg              ← 71st Street current state (Opportunity + Vision sections)
         ├── CORNER_UPDATE.png           ← TIDE corner rendering (hero background + Vision "after")
@@ -34,12 +36,28 @@ tide-kitchen-site/
         └── RegalMile.webp              ← Regal Mile Studios catalyst card
 ```
 
+> Investor/partner documents are **not stored in this repo**. They are confidential and
+> shared privately on request via the gated "Materials" form.
+
+## Materials request form (Formspree)
+
+The "Materials" section posts to [Formspree](https://formspree.io). To wire it up:
+
+1. Create a form at formspree.io with `hello@tide.kitchen` as the destination.
+2. Copy the form ID (the part after `/f/` in your endpoint, e.g. `xoldoexample`).
+3. In `index.html`, replace `YOUR_FORM_ID` in `action="https://formspree.io/f/YOUR_FORM_ID"`
+   with that ID.
+4. Submit once to confirm Formspree's verification email.
+
+The form captures name, email, organization, investor type, accredited-investor status,
+materials requested, an optional message, and a required confidentiality acknowledgment.
+
 ## Deployment
 
 Static site — works on any host. No build step. No dependencies.
 
-- **Netlify / Vercel / Cloudflare Pages**: drag-and-drop the `tide-kitchen-site` folder
-- **GitHub Pages**: push to a repo and enable Pages on the root
+- **GitHub Pages**: push to a repo and enable Pages on the root (current setup; `CNAME` → tide.kitchen)
+- **Netlify / Vercel / Cloudflare Pages**: drag-and-drop the folder
 - **Traditional hosting (S3, FTP, etc.)**: upload the entire folder, point at `index.html`
 
 External dependencies loaded from CDN: Google Fonts (EB Garamond, Inter, JetBrains Mono).
