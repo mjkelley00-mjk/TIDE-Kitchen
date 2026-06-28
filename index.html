@@ -1456,32 +1456,6 @@
     color: var(--paper);
   }
   .materials__title em { color: var(--gold); font-style: italic; }
-  /* MATERIALS — request-access form (gated) */
-  .materials__note { color: var(--text-paper-mute); }
-  .req { margin-top: clamp(44px,7vh,72px); max-width: 780px; }
-  .req__eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing:.14em; text-transform:uppercase; color: var(--gold); margin-bottom: 12px; }
-  .req__title { font-family: var(--font-display); font-size: clamp(24px,3vw,34px); font-weight:500; color: var(--paper); margin-bottom: 10px; }
-  .req__sub { color: var(--text-paper-mute); line-height:1.6; margin-bottom: 30px; max-width:640px; }
-  .req__form { display:grid; gap:20px; }
-  .req__rowf { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  .req__field { display:flex; flex-direction:column; gap:8px; }
-  .req__field.full { grid-column:1 / -1; }
-  .req__field label { font-family: var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color: var(--text-paper-mute); }
-  .req__field input, .req__field select, .req__field textarea {
-    background: rgba(239,233,217,0.05); border:1px solid var(--ink-soft); border-radius:6px;
-    padding:13px 15px; color: var(--text-paper); font-family: var(--font-body); font-size:15px; }
-  .req__field input::placeholder, .req__field textarea::placeholder { color: rgba(239,233,217,0.40); }
-  .req__field input:focus, .req__field select:focus, .req__field textarea:focus { outline:none; border-color: var(--gold); }
-  .req__field select { appearance:none; -webkit-appearance:none; cursor:pointer; }
-  .req__field textarea { min-height:96px; resize:vertical; }
-  .req__opts { display:flex; flex-wrap:wrap; gap:14px 22px; padding-top:4px; }
-  .req__opt, .req__ack { display:flex; gap:10px; align-items:flex-start; font-size:14px; color: var(--text-paper); line-height:1.5; }
-  .req__ack { font-size:13px; color: var(--text-paper-mute); }
-  .req__opt input, .req__ack input { margin-top:3px; accent-color: var(--gold); }
-  .req__submit { justify-self:start; margin-top:4px; background: var(--gold); color: var(--ink); border:none; border-radius:30px; padding:15px 34px; font-family: var(--font-body); font-weight:600; font-size:15px; cursor:pointer; transition:opacity .2s; }
-  .req__submit:hover { opacity:.9; }
-  .req__fine { font-size:12px; color: var(--text-paper-mute); margin-top:2px; line-height:1.55; }
-  @media (max-width:640px){ .req__rowf{ grid-template-columns:1fr; } }
   .materials__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -2465,80 +2439,28 @@
     <div class="materials__head reveal">
       <div class="eyebrow">For Qualified Investors &amp; Partners</div>
       <h2 class="materials__title">Request the <em>dossier.</em></h2>
-      <p class="materials__note" style="margin-top:16px; max-width:640px; line-height:1.6; opacity:.72; font-size:.98rem;">These materials are confidential and shared with qualified investors and partners on request. Tell us a little about yourself and we&rsquo;ll send them over.</p>
+      <p class="materials__note" style="margin-top:16px; max-width:640px; line-height:1.6; opacity:.72; font-size:.98rem; color:var(--text-paper-mute);">These materials are confidential and shared with qualified investors and partners on request.</p>
     </div>
 
     <div class="materials__grid">
-      <a class="doc reveal" href="#request">
+      <a class="doc reveal" href="request.html">
         <div class="doc__num">01 / Brief</div>
         <h3 class="doc__title">Executive <em>Summary</em></h3>
         <p class="doc__desc">A one-page overview of the thesis, platform, capital structure, and wealth distribution model. The fastest read.</p>
         <span class="doc__cta"><span>Request access</span><span class="arrow"></span></span>
       </a>
-      <a class="doc reveal" data-delay="1" href="#request">
+      <a class="doc reveal" data-delay="1" href="request.html">
         <div class="doc__num">02 / Deck</div>
         <h3 class="doc__title">Pitch <em>Deck</em></h3>
         <p class="doc__desc">The investor- and partner-facing presentation — market opportunity, four-stage pipeline, capital toolkit, and the wealth multiplier.</p>
         <span class="doc__cta"><span>Request access</span><span class="arrow"></span></span>
       </a>
-      <a class="doc reveal" data-delay="2" href="#request">
+      <a class="doc reveal" data-delay="2" href="request.html">
         <div class="doc__num">03 / Report</div>
         <h3 class="doc__title">Strategic <em>Analysis</em></h3>
         <p class="doc__desc">The full strategic analysis — macro dynamics, exit comparables, financial engineering, and SROI methodology with sources.</p>
         <span class="doc__cta"><span>Request access</span><span class="arrow"></span></span>
       </a>
-    </div>
-
-    <div class="req" id="request">
-      <div class="req__eyebrow reveal">Request Access</div>
-      <h3 class="req__title reveal" data-delay="1">Tell us a little about you.</h3>
-      <p class="req__sub reveal" data-delay="1">These materials are confidential. Share a few details and we&rsquo;ll send the relevant documents to qualified investors and partners.</p>
-      <!-- Materials request form — posts to Formspree (hello@tide.kitchen). -->
-      <form class="req__form reveal" data-delay="2" action="https://formspree.io/f/mkolbegy" method="POST">
-        <input type="hidden" name="_subject" value="New investor-materials request — tide.kitchen">
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
-        <div class="req__rowf">
-          <div class="req__field"><label for="rq-name">Full name</label><input id="rq-name" name="name" type="text" required placeholder="Your name"></div>
-          <div class="req__field"><label for="rq-email">Email</label><input id="rq-email" name="email" type="email" required placeholder="you@firm.com"></div>
-        </div>
-        <div class="req__rowf">
-          <div class="req__field"><label for="rq-org">Organization / firm</label><input id="rq-org" name="organization" type="text" placeholder="Optional"></div>
-          <div class="req__field"><label for="rq-type">I&rsquo;m a&hellip;</label>
-            <select id="rq-type" name="investor_type">
-              <option value="">Select&hellip;</option>
-              <option>Family office</option>
-              <option>Foundation / impact investor</option>
-              <option>Angel / individual investor</option>
-              <option>Institutional / fund</option>
-              <option>Operating / franchise partner</option>
-              <option>Advisor</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="req__rowf">
-          <div class="req__field"><label for="rq-acc">Accredited investor?</label>
-            <select id="rq-acc" name="accredited">
-              <option value="">Select&hellip;</option>
-              <option>Yes</option>
-              <option>No</option>
-              <option>Not sure</option>
-              <option>Not applicable</option>
-            </select>
-          </div>
-          <div class="req__field"><label>Materials requested</label>
-            <div class="req__opts">
-              <label class="req__opt"><input type="checkbox" name="materials" value="Executive Summary"> Executive Summary</label>
-              <label class="req__opt"><input type="checkbox" name="materials" value="Pitch Deck"> Pitch Deck</label>
-              <label class="req__opt"><input type="checkbox" name="materials" value="Strategic Analysis"> Strategic Analysis</label>
-            </div>
-          </div>
-        </div>
-        <div class="req__field full"><label for="rq-msg">Anything else?</label><textarea id="rq-msg" name="message" placeholder="A little context on your interest (optional)"></textarea></div>
-        <label class="req__ack"><input type="checkbox" name="confidentiality_ack" value="agreed" required> I understand these materials are confidential and agree not to distribute or reproduce them.</label>
-        <button class="req__submit" type="submit">Request materials</button>
-        <p class="req__fine">We&rsquo;ll review and follow up by email. Submitting does not create an offer, solicitation, or commitment. By submitting, you consent to TIDE Kitchen contacting you about your request.</p>
-      </form>
     </div>
   </div>
 </section>
@@ -2564,7 +2486,7 @@
         <div class="path__label">For Investors</div>
         <h3 class="path__title">Capital that <em>compounds.</em></h3>
         <p class="path__copy">Institutional, family office, and OZ-fund capital across debt, equity, and convertible vehicles. Co-invest alongside operators built for franchise scale from Day 1.</p>
-        <a href="mailto:hello@tide.kitchen?subject=Investor%20Inquiry" class="path__cta">
+        <a href="request.html" class="path__cta">
           <span>Request the Pitch Deck</span>
           <span class="arrow"></span>
         </a>
@@ -2573,7 +2495,7 @@
         <div class="path__label">For Partners</div>
         <h3 class="path__title">Build the platform <em>with us.</em></h3>
         <p class="path__copy">Industry expertise, non-profit collaboration, developer alignment, and corporate sponsorship. The four-stage pipeline depends on aligned partners at every stage.</p>
-        <a href="mailto:hello@tide.kitchen?subject=Partnership%20Inquiry" class="path__cta">
+        <a href="request.html" class="path__cta">
           <span>Explore Partnership</span>
           <span class="arrow"></span>
         </a>
@@ -2617,9 +2539,9 @@
       <div class="foot__group">
         <h4>Materials</h4>
         <ul>
-          <li><a href="#request">Executive Summary</a></li>
-          <li><a href="#request">Pitch Deck</a></li>
-          <li><a href="#request">Strategic Analysis</a></li>
+          <li><a href="request.html">Executive Summary</a></li>
+          <li><a href="request.html">Pitch Deck</a></li>
+          <li><a href="request.html">Strategic Analysis</a></li>
         </ul>
       </div>
       <div class="foot__group">
