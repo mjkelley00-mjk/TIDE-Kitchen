@@ -1,5 +1,5 @@
-https://raw.githubusercontent.com/mjkelley00-mjk/TIDE-Kitchen/main/index.html
-→ https://raw.githubusercontent.com/mjkelley00-mjk/TIDE-Kitchen/main/index.html
+https://raw.githubusercontent.com/mjkelley00-mjk/TIDE-Kitchen/main/index.html?cb=627a
+→ https://raw.githubusercontent.com/mjkelley00-mjk/TIDE-Kitchen/main/index.html?cb=627a
 Content-Type: text/plain; charset=utf-8
 
 <!doctype html>
@@ -759,63 +759,6 @@ Content-Type: text/plain; charset=utf-8
     transition: transform 1.6s cubic-bezier(0.2, 0.7, 0.2, 1);
   }
   .stage-feature__media:hover img { transform: scale(1.04); }
-  /* Stage 04 chart panel — the deck's wealth-multiplier curve as the stage visual */
-  .stage-feature__media--chart {
-    background: var(--ink);
-    display: flex;
-  }
-  .stage-feature__media--chart .wave-chart {
-    width: 100%; height: 100%;
-    display: block;
-  }
-  .wave-chart .wc-curve {
-    fill: none;
-    stroke: var(--gold);
-    stroke-width: 3;
-    stroke-linecap: round;
-  }
-  .wave-chart .wc-grid {
-    stroke: rgba(239,233,217,0.14);
-    stroke-width: 1;
-    stroke-dasharray: 4 6;
-  }
-  .wave-chart .wc-node {
-    fill: var(--ink);
-    stroke: var(--text-paper);
-    stroke-width: 2.5;
-  }
-  .wave-chart .wc-node--gold {
-    fill: var(--gold);
-    stroke: var(--gold-bright);
-    stroke-width: 3;
-  }
-  .wave-chart .wc-axis {
-    fill: var(--text-paper-mute);
-    font-family: var(--font-mono);
-    font-size: 16px;
-    letter-spacing: 0.12em;
-  }
-  .wave-chart .wc-x {
-    fill: var(--text-paper-mute);
-    font-family: var(--font-mono);
-    font-size: 15px;
-    letter-spacing: 0.18em;
-    text-anchor: middle;
-  }
-  .wave-chart .wc-x--gold { fill: var(--gold); }
-  .wave-chart .wc-tag-num {
-    fill: var(--gold);
-    font-family: var(--font-display);
-    font-style: italic;
-    font-size: 38px;
-    font-weight: 600;
-  }
-  .wave-chart .wc-tag-label {
-    fill: var(--text-paper-mute);
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.2em;
-  }
   .stage-feature__media .corner {
     position: absolute;
     bottom: 0; left: 0;
@@ -894,6 +837,78 @@ Content-Type: text/plain; charset=utf-8
     .stage-feature, .stage-feature--reverse { grid-template-columns: 1fr; }
     .stage-feature--reverse .stage-feature__media,
     .stage-feature--reverse .stage-feature__body { order: 0; }
+  }
+
+  .stages-compact {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: clamp(48px, 7vh, 80px);
+  }
+  .stage-card {
+    background: var(--paper-soft);
+    padding: 40px 36px;
+    border: 1px solid var(--paper-edge);
+    transition: transform 0.4s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.4s ease, border-color 0.4s ease;
+  }
+  .stage-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px -16px rgba(10,31,51,0.2);
+    border-color: var(--gold);
+  }
+  .stage-card__phase {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 14px;
+  }
+  .stage-card__title {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 6px;
+    line-height: 1.1;
+  }
+  .stage-card__title em { color: var(--gold-deep); font-style: italic; }
+  .stage-card__sub {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 18px;
+    color: var(--text-ink-mute);
+    margin-bottom: 18px;
+  }
+  .stage-card__copy {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-ink-mute);
+  }
+  .stage-card__metric {
+    margin-top: 24px;
+    padding-top: 16px;
+    border-top: 1px solid var(--paper-edge);
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  .stage-card__metric .v {
+    font-family: var(--font-display);
+    font-size: 24px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .stage-card__metric .v em { color: var(--gold-deep); font-style: italic; }
+  .stage-card__metric .l {
+    font-family: var(--font-mono);
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--text-ink-mute);
+  }
+  @media (max-width: 720px) {
+    .stages-compact { grid-template-columns: 1fr; }
   }
 
   /* MULTIPLIER CALLOUT */
@@ -1445,32 +1460,6 @@ Content-Type: text/plain; charset=utf-8
     color: var(--paper);
   }
   .materials__title em { color: var(--gold); font-style: italic; }
-  /* MATERIALS — request-access form (gated) */
-  .materials__note { color: var(--text-paper-mute); }
-  .req { margin-top: clamp(44px,7vh,72px); max-width: 780px; }
-  .req__eyebrow { font-family: var(--font-mono); font-size: 12px; letter-spacing:.14em; text-transform:uppercase; color: var(--gold); margin-bottom: 12px; }
-  .req__title { font-family: var(--font-display); font-size: clamp(24px,3vw,34px); font-weight:500; color: var(--paper); margin-bottom: 10px; }
-  .req__sub { color: var(--text-paper-mute); line-height:1.6; margin-bottom: 30px; max-width:640px; }
-  .req__form { display:grid; gap:20px; }
-  .req__rowf { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-  .req__field { display:flex; flex-direction:column; gap:8px; }
-  .req__field.full { grid-column:1 / -1; }
-  .req__field label { font-family: var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color: var(--text-paper-mute); }
-  .req__field input, .req__field select, .req__field textarea {
-    background: rgba(239,233,217,0.05); border:1px solid var(--ink-soft); border-radius:6px;
-    padding:13px 15px; color: var(--text-paper); font-family: var(--font-body); font-size:15px; }
-  .req__field input::placeholder, .req__field textarea::placeholder { color: rgba(239,233,217,0.40); }
-  .req__field input:focus, .req__field select:focus, .req__field textarea:focus { outline:none; border-color: var(--gold); }
-  .req__field select { appearance:none; -webkit-appearance:none; cursor:pointer; }
-  .req__field textarea { min-height:96px; resize:vertical; }
-  .req__opts { display:flex; flex-wrap:wrap; gap:14px 22px; padding-top:4px; }
-  .req__opt, .req__ack { display:flex; gap:10px; align-items:flex-start; font-size:14px; color: var(--text-paper); line-height:1.5; }
-  .req__ack { font-size:13px; color: var(--text-paper-mute); }
-  .req__opt input, .req__ack input { margin-top:3px; accent-color: var(--gold); }
-  .req__submit { justify-self:start; margin-top:4px; background: var(--gold); color: var(--ink); border:none; border-radius:30px; padding:15px 34px; font-family: var(--font-body); font-weight:600; font-size:15px; cursor:pointer; transition:opacity .2s; }
-  .req__submit:hover { opacity:.9; }
-  .req__fine { font-size:12px; color: var(--text-paper-mute); margin-top:2px; line-height:1.55; }
-  @media (max-width:640px){ .req__rowf{ grid-template-columns:1fr; } }
   .materials__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1861,7 +1850,6 @@ Content-Type: text/plain; charset=utf-8
       <a href="#opportunity">Opportunity</a>
       <a href="#platform">Platform</a>
       <a href="#capital">Capital</a>
-      <a href="#materials">Materials</a>
       <a href="#join">Join</a>
     </div>
     <a href="#join" class="nav__cta">Get In Touch</a>
@@ -1901,8 +1889,8 @@ Content-Type: text/plain; charset=utf-8
       </div>
       <div class="hero__stat reveal" data-delay="5">
         <span class="meta">Wealth Multiplier</span>
-        <div class="v"><em>8×–20×</em></div>
-        <div class="l">EV expansion at Wave Stage exit</div>
+        <div class="v"><em>~15×</em></div>
+        <div class="l">Operator equity expansion at Wave exit</div>
       </div>
       <div class="hero__stat reveal" data-delay="6">
         <span class="meta">Social ROI</span>
@@ -1929,7 +1917,7 @@ Content-Type: text/plain; charset=utf-8
 
     <div class="section__head">
       <div class="reveal">
-        <div class="eyebrow">Strategic Analysis</div>
+        <div class="eyebrow">The Blueprint</div>
       </div>
       <h2 class="section__title display reveal" data-delay="1">
         A blueprint for <em class="accent-teal">equitable, exponential</em> urban wealth creation.
@@ -2235,7 +2223,7 @@ Content-Type: text/plain; charset=utf-8
     <!-- STAGE 03 — Current -->
     <div class="stage-feature reveal">
       <div class="stage-feature__media">
-        <img src="assets/img/CURRENT_RAMEN.jpg" alt="TIDE Current — 71st Street Ramen interior, operators serving guests in a multi-unit concept" />
+        <img src="assets/img/CURRENT_RAMEN.jpg" alt="71st Street Ramen — a TIDE Current multi-unit operator interior" />
         <div class="corner"><em>Stage 03</em>Multi-Unit Scale</div>
       </div>
       <div class="stage-feature__body">
@@ -2243,72 +2231,45 @@ Content-Type: text/plain; charset=utf-8
         <h3 class="stage-feature__title">TIDE <em>Current</em></h3>
         <div class="stage-feature__sub">Multi-Unit Scale</div>
         <p class="stage-feature__copy">
-          Stress test before you franchise. Centralized HR, supply chain, accounting, and marketing services protect unit-level EBITDA across 3–10 locations — and prepare the operator for the next leg of expansion.
+          Stress test before you franchise. Centralized HR, supply chain, accounting, and marketing services protect unit-level EBITDA across 3–10 locations — proving the concept scales into adjacent communities before the franchise leap.
         </p>
-        <div class="stage-feature__metric">
-          <div class="v"><em>3–10</em></div>
-          <div class="l">Units · Shared Ops</div>
-        </div>
+        <div class="stage-feature__metric"><div class="v"><em>3–10</em></div><div class="l">Units · Shared Ops</div></div>
       </div>
     </div>
 
     <!-- STAGE 04 — Wave -->
     <div class="stage-feature stage-feature--reverse reveal">
-      <div class="stage-feature__media stage-feature__media--chart">
-        <svg class="wave-chart" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wealth multiplier growth curve: enterprise value expands 8 to 20 times from Pool to Wave stage">
-          <defs>
-            <linearGradient id="waveArea" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stop-color="#c9a961" stop-opacity="0.42"/>
-              <stop offset="100%" stop-color="#c9a961" stop-opacity="0"/>
-            </linearGradient>
-          </defs>
-          <!-- y-axis ticks -->
-          <text x="56" y="150" class="wc-axis">EV</text>
-          <line x1="84" y1="146" x2="712" y2="146" class="wc-grid"/>
-          <text x="50" y="486" class="wc-axis">SDE</text>
-          <line x1="84" y1="482" x2="712" y2="482" class="wc-grid"/>
-          <!-- area under curve -->
-          <path d="M120,470 C260,455 300,430 392,360 C470,300 520,235 672,150 L672,500 L120,500 Z" fill="url(#waveArea)"/>
-          <!-- the curve -->
-          <path d="M120,470 C260,455 300,430 392,360 C470,300 520,235 672,150" class="wc-curve"/>
-          <!-- nodes -->
-          <circle cx="120" cy="470" r="8" class="wc-node"/>
-          <circle cx="296" cy="424" r="8" class="wc-node"/>
-          <circle cx="464" cy="318" r="8" class="wc-node"/>
-          <circle cx="672" cy="150" r="13" class="wc-node wc-node--gold"/>
-          <!-- x labels -->
-          <text x="120" y="540" class="wc-x">POOL</text>
-          <text x="296" y="540" class="wc-x">ANCHOR</text>
-          <text x="464" y="540" class="wc-x">CURRENT</text>
-          <text x="672" y="540" class="wc-x wc-x--gold">WAVE</text>
-          <!-- multiplier tag -->
-          <g class="wc-tag">
-            <text x="672" y="96" class="wc-tag-num" text-anchor="middle">8×–20×</text>
-            <text x="672" y="116" class="wc-tag-label" text-anchor="middle">WEALTH MULTIPLIER</text>
-          </g>
+      <div class="stage-feature__media">
+        <svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;display:block;background:#f3eede;" role="img" aria-label="EV to SDE wealth multiplier curve rising from Pool to Wave">
+          <defs><linearGradient id="wmgrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#c9a961" stop-opacity="0.5"/><stop offset="1" stop-color="#c9a961" stop-opacity="0.02"/></linearGradient></defs>
+          <g stroke="#0a1f33" stroke-opacity="0.08" stroke-dasharray="3 5"><line x1="95" y1="130" x2="560" y2="130"/><line x1="95" y1="225" x2="560" y2="225"/><line x1="95" y1="320" x2="560" y2="320"/></g>
+          <line x1="95" y1="60" x2="95" y2="385" stroke="#0a1f33" stroke-opacity="0.25"/><line x1="95" y1="385" x2="560" y2="385" stroke="#0a1f33" stroke-opacity="0.25"/>
+          <path d="M130,355 C190,350 220,335 270,318 C340,295 350,270 400,235 C455,205 480,150 520,100 L520,385 L130,385 Z" fill="url(#wmgrad)"/>
+          <path d="M130,355 C190,350 220,335 270,318 C340,295 350,270 400,235 C455,205 480,150 520,100" fill="none" stroke="#0a1f33" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="130" cy="355" r="5" fill="#f3eede" stroke="#0a1f33" stroke-width="2"/><circle cx="270" cy="318" r="5" fill="#f3eede" stroke="#0a1f33" stroke-width="2"/><circle cx="400" cy="235" r="5" fill="#f3eede" stroke="#0a1f33" stroke-width="2"/><circle cx="520" cy="100" r="7" fill="#c9a961" stroke="#0a1f33" stroke-width="2"/>
+          <text x="70" y="72" font-family="ui-monospace,monospace" font-size="11" fill="#0a1f33" fill-opacity="0.5">EV</text><text x="62" y="380" font-family="ui-monospace,monospace" font-size="11" fill="#0a1f33" fill-opacity="0.5">SDE</text>
+          <g font-family="ui-monospace,monospace" font-size="11" fill="#0a1f33" fill-opacity="0.55" text-anchor="middle" letter-spacing="1"><text x="130" y="408">POOL</text><text x="270" y="408">ANCHOR</text><text x="400" y="408">CURRENT</text><text x="520" y="408">WAVE</text></g>
+          <rect x="398" y="40" width="158" height="62" fill="#0a1f33"/><text x="477" y="72" font-family="'EB Garamond',Georgia,serif" font-size="26" fill="#c9a961" text-anchor="middle">8&#215;&#8211;20&#215;</text><text x="477" y="90" font-family="ui-monospace,monospace" font-size="8.5" fill="#efe9d9" text-anchor="middle" letter-spacing="1.5">WEALTH MULTIPLIER</text>
         </svg>
         <div class="corner"><em>Stage 04</em>Franchise Execution</div>
       </div>
       <div class="stage-feature__body">
         <div class="stage-feature__phase">Stage 04 · Franchise Execution</div>
         <h3 class="stage-feature__title">TIDE <em>Wave</em></h3>
-        <div class="stage-feature__sub">From Cash Flow to Category Killer</div>
+        <div class="stage-feature__sub">Franchise Execution</div>
         <p class="stage-feature__copy">
-          For concepts with breakout potential, TIDE deploys growth capital to execute the franchise model — established in the Pool, refined in the Anchor, validated in the Current. FDD navigation, equity alignment, and the activation of the wealth multiplier turn neighborhood brands into regional powerhouses with life-changing exits.
+          For concepts with breakout potential, TIDE deploys growth capital to execute the franchise model — FDD navigation, equity alignment, and the activation of the wealth multiplier. Neighborhood brands transition into regional powerhouses with life-changing exits.
         </p>
-        <div class="stage-feature__metric">
-          <div class="v"><em>8×–20×</em></div>
-          <div class="l">EV/EBITDA Expansion at Exit</div>
-        </div>
+        <div class="stage-feature__metric"><div class="v"><em>~15×</em></div><div class="l">EV / EBITDA Expansion</div></div>
       </div>
     </div>
 
     <div class="multiplier reveal">
-      <div class="multiplier__num">8×–20×</div>
+      <div class="multiplier__num">~15×</div>
       <div class="multiplier__body">
         <div class="multiplier__label">— The Wealth Multiplier</div>
         <h3 class="multiplier__title">From cash flow to <em>category killer.</em></h3>
-        <p class="multiplier__copy">A single-unit operator generating $150K in earnings sells for roughly $450K–$700K on an SDE basis. A 15-unit portfolio generating $2M in normalized EBITDA, valued at an institutional 8.0× EV/EBITDA multiple, commands $16M — a 32× expansion in equity value driven entirely by structural professionalization.</p>
+        <p class="multiplier__copy">A single-unit operator generating $150K in earnings sells for roughly $450K on an SDE basis. A 15-unit portfolio generating $2M in normalized EBITDA, valued at an institutional 7× EV/EBITDA multiple, commands $14M in enterprise value; after the outside growth capital that funds the scale-up, the operator retains roughly $7M — a ~15× expansion of their personal equity driven entirely by structural professionalization.</p>
       </div>
     </div>
   </div>
@@ -2336,21 +2297,21 @@ Content-Type: text/plain; charset=utf-8
     <div class="toolkit">
       <div class="toolkit__row reveal">
         <div class="num">01 /</div>
-        <div class="name">ROBS<span class="sub">Retirement Rollover</span></div>
-        <div class="stage-tags"><span class="tag on">Pool</span><span class="tag">Anchor</span><span class="tag">Current</span><span class="tag">Wave</span></div>
-        <div class="desc">Initial debt-free founder equity injection without monthly debt service. Tax-advantaged rollover structure unlocking retirement capital for franchise financing.</div>
+        <div class="name">Grants <em>&amp; PRI</em><span class="sub">Non-Dilutive · Catalytic</span></div>
+        <div class="stage-tags"><span class="tag on">Pool</span><span class="tag on">Anchor</span><span class="tag">Current</span><span class="tag">Wave</span></div>
+        <div class="desc">Grants for startup, build-out, and hiring. Municipal, non-profit, philanthropic, and venture-aligned sources — plus recoverable, recyclable PRI.</div>
       </div>
       <div class="toolkit__row reveal">
         <div class="num">02 /</div>
-        <div class="name">Grants<span class="sub">Non-Dilutive</span></div>
-        <div class="stage-tags"><span class="tag on">Pool</span><span class="tag on">Anchor</span><span class="tag">Current</span><span class="tag">Wave</span></div>
-        <div class="desc">Up to $250K in reimbursement grants for build-out and hiring. Municipal, non-profit, philanthropic, and venture-aligned sources.</div>
-      </div>
-      <div class="toolkit__row reveal">
-        <div class="num">03 /</div>
         <div class="name">BDC <em>Debt</em><span class="sub">Convertible Note</span></div>
         <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag">Wave</span></div>
         <div class="desc">Brick-and-mortar transition with founder-friendly repayment. Interest-only, PIK-flexible, convertible — operators can pay down for total independence or convert if the brand breaks out.</div>
+      </div>
+      <div class="toolkit__row reveal">
+        <div class="num">03 /</div>
+        <div class="name">QOZ <em>Funds</em><span class="sub">Tax-Advantaged</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
+        <div class="desc">External investor demand routed into operators and real estate. Capital-gains deferral with the 90% asset rule.</div>
       </div>
       <div class="toolkit__row reveal">
         <div class="num">04 /</div>
@@ -2360,15 +2321,15 @@ Content-Type: text/plain; charset=utf-8
       </div>
       <div class="toolkit__row reveal">
         <div class="num">05 /</div>
-        <div class="name">Venture <em>Equity</em><span class="sub">Direct Investment</span></div>
-        <div class="stage-tags"><span class="tag">Pool</span><span class="tag">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
-        <div class="desc">Funds franchise infrastructure ahead of the wealth multiplier. Multi-unit expansion plus executive support for institutional-grade scale.</div>
+        <div class="name">ROBS<span class="sub">Retirement Rollover</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
+        <div class="desc">Debt-free operator and franchisee equity without monthly debt service. A tax-advantaged rollover that unlocks retirement capital to finance a unit or buy into a franchise system.</div>
       </div>
       <div class="toolkit__row reveal">
         <div class="num">06 /</div>
-        <div class="name">QOZ <em>Funds</em><span class="sub">Tax-Advantaged</span></div>
-        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
-        <div class="desc">External investor demand routed into operators and real estate. Capital-gains deferral with the 90% asset rule.</div>
+        <div class="name">Venture <em>Equity</em><span class="sub">Direct Investment</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
+        <div class="desc">Funds franchise infrastructure ahead of the wealth multiplier. Multi-unit expansion plus executive support for institutional-grade scale.</div>
       </div>
     </div>
 
@@ -2406,7 +2367,7 @@ Content-Type: text/plain; charset=utf-8
         <div class="aud__label">— Founder</div>
         <h3 class="aud__title">The Operator</h3>
         <div class="aud__hook">Equity in the brand they built.</div>
-        <p class="aud__copy">Captures the 8×–20× wealth multiplier at the Wave Stage exit. The headline outcome — but not the only one. Operators retain meaningful equity through a real liquidity event.</p>
+        <p class="aud__copy">Captures the ~15× wealth multiplier at the Wave Stage exit. The headline outcome — but not the only one. Operators retain meaningful equity through a real liquidity event.</p>
       </div>
       <div class="aud reveal" data-delay="1">
         <div class="aud__label">— Neighbors</div>
@@ -2487,95 +2448,6 @@ Content-Type: text/plain; charset=utf-8
   </div>
 </section>
 
-<!-- ============================ MATERIALS ============================ -->
-<section class="section materials" id="materials">
-  <div class="wrap">
-    <div class="section-marker">
-      <span class="left">Materials</span>
-      <span class="right">By Request</span>
-    </div>
-
-    <div class="materials__head reveal">
-      <div class="eyebrow">For Qualified Investors &amp; Partners</div>
-      <h2 class="materials__title">Request the <em>dossier.</em></h2>
-      <p class="materials__note" style="margin-top:16px; max-width:640px; line-height:1.6; opacity:.72; font-size:.98rem;">These materials are confidential and shared with qualified investors and partners on request. Tell us a little about yourself and we&rsquo;ll send them over.</p>
-    </div>
-
-    <div class="materials__grid">
-      <a class="doc reveal" href="#request">
-        <div class="doc__num">01 / Brief</div>
-        <h3 class="doc__title">Executive <em>Summary</em></h3>
-        <p class="doc__desc">A one-page overview of the thesis, platform, capital structure, and wealth distribution model. The fastest read.</p>
-        <span class="doc__cta"><span>Request access</span><span class="arrow"></span></span>
-      </a>
-      <a class="doc reveal" data-delay="1" href="#request">
-        <div class="doc__num">02 / Deck</div>
-        <h3 class="doc__title">Pitch <em>Deck</em></h3>
-        <p class="doc__desc">The investor- and partner-facing presentation — market opportunity, four-stage pipeline, capital toolkit, and the wealth multiplier.</p>
-        <span class="doc__cta"><span>Request access</span><span class="arrow"></span></span>
-      </a>
-      <a class="doc reveal" data-delay="2" href="#request">
-        <div class="doc__num">03 / Report</div>
-        <h3 class="doc__title">Strategic <em>Analysis</em></h3>
-        <p class="doc__desc">The full strategic analysis — macro dynamics, exit comparables, financial engineering, and SROI methodology with sources.</p>
-        <span class="doc__cta"><span>Request access</span><span class="arrow"></span></span>
-      </a>
-    </div>
-
-    <div class="req" id="request">
-      <div class="req__eyebrow reveal">Request Access</div>
-      <h3 class="req__title reveal" data-delay="1">Tell us a little about you.</h3>
-      <p class="req__sub reveal" data-delay="1">These materials are confidential. Share a few details and we&rsquo;ll send the relevant documents to qualified investors and partners.</p>
-      <!-- Materials request form — posts to Formspree (hello@tide.kitchen). -->
-      <form class="req__form reveal" data-delay="2" action="https://formspree.io/f/mkolbegy" method="POST">
-        <input type="hidden" name="_subject" value="New investor-materials request — tide.kitchen">
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
-        <div class="req__rowf">
-          <div class="req__field"><label for="rq-name">Full name</label><input id="rq-name" name="name" type="text" required placeholder="Your name"></div>
-          <div class="req__field"><label for="rq-email">Email</label><input id="rq-email" name="email" type="email" required placeholder="you@firm.com"></div>
-        </div>
-        <div class="req__rowf">
-          <div class="req__field"><label for="rq-org">Organization / firm</label><input id="rq-org" name="organization" type="text" placeholder="Optional"></div>
-          <div class="req__field"><label for="rq-type">I&rsquo;m a&hellip;</label>
-            <select id="rq-type" name="investor_type">
-              <option value="">Select&hellip;</option>
-              <option>Family office</option>
-              <option>Foundation / impact investor</option>
-              <option>Angel / individual investor</option>
-              <option>Institutional / fund</option>
-              <option>Operating / franchise partner</option>
-              <option>Advisor</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="req__rowf">
-          <div class="req__field"><label for="rq-acc">Accredited investor?</label>
-            <select id="rq-acc" name="accredited">
-              <option value="">Select&hellip;</option>
-              <option>Yes</option>
-              <option>No</option>
-              <option>Not sure</option>
-              <option>Not applicable</option>
-            </select>
-          </div>
-          <div class="req__field"><label>Materials requested</label>
-            <div class="req__opts">
-              <label class="req__opt"><input type="checkbox" name="materials" value="Executive Summary"> Executive Summary</label>
-              <label class="req__opt"><input type="checkbox" name="materials" value="Pitch Deck"> Pitch Deck</label>
-              <label class="req__opt"><input type="checkbox" name="materials" value="Strategic Analysis"> Strategic Analysis</label>
-            </div>
-          </div>
-        </div>
-        <div class="req__field full"><label for="rq-msg">Anything else?</label><textarea id="rq-msg" name="message" placeholder="A little context on your interest (optional)"></textarea></div>
-        <label class="req__ack"><input type="checkbox" name="confidentiality_ack" value="agreed" required> I understand these materials are confidential and agree not to distribute or reproduce them.</label>
-        <button class="req__submit" type="submit">Request materials</button>
-        <p class="req__fine">We&rsquo;ll review and follow up by email. Submitting does not create an offer, solicitation, or commitment. By submitting, you consent to TIDE Kitchen contacting you about your request.</p>
-      </form>
-    </div>
-  </div>
-</section>
-
 <!-- ============================ JOIN ============================ -->
 <section class="section join" id="join">
   <div class="wrap">
@@ -2594,11 +2466,11 @@ Content-Type: text/plain; charset=utf-8
 
     <div class="pathways">
       <div class="path reveal">
-        <div class="path__label">For Investors</div>
-        <h3 class="path__title">Capital that <em>compounds.</em></h3>
-        <p class="path__copy">Institutional, family office, and OZ-fund capital across debt, equity, and convertible vehicles. Co-invest alongside operators built for franchise scale from Day 1.</p>
-        <a href="mailto:hello@tide.kitchen?subject=Investor%20Inquiry" class="path__cta">
-          <span>Request the Pitch Deck</span>
+        <div class="path__label">For the Community</div>
+        <h3 class="path__title">Own a stake <em>next door.</em></h3>
+        <p class="path__copy">SDIRA and Reg CF pathways for South Shore residents to invest directly in local operators — sharing in the upside of the corridor as owners, not just patrons.</p>
+        <a href="community.html" class="path__cta">
+          <span>Join the Co-Invest List</span>
           <span class="arrow"></span>
         </a>
       </div>
@@ -2606,12 +2478,138 @@ Content-Type: text/plain; charset=utf-8
         <div class="path__label">For Partners</div>
         <h3 class="path__title">Build the platform <em>with us.</em></h3>
         <p class="path__copy">Industry expertise, non-profit collaboration, developer alignment, and corporate sponsorship. The four-stage pipeline depends on aligned partners at every stage.</p>
-        <a href="mailto:hello@tide.kitchen?subject=Partnership%20Inquiry" class="path__cta">
+        <a href="partner.html" class="path__cta">
           <span>Explore Partnership</span>
           <span class="arrow"></span>
         </a>
       </div>
       <div class="path reveal" data-delay="2">
-        <div class="path__label">For the Community</div>
-        <h3 class="path__title">Own a stake <em>next door.</em></h3>
-        <p class="path__copy">SDIRA and Reg CF pathways for South Shore r
+        <div class="path__label">For Investors</div>
+        <h3 class="path__title">Capital that <em>compounds.</em></h3>
+        <p class="path__copy">Institutional, family office, and OZ-fund capital across debt, equity, and convertible vehicles. Co-invest alongside operators built for franchise scale from Day 1.</p>
+        <a href="request.html" class="path__cta">
+          <span>Request Information</span>
+          <span class="arrow"></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-bar reveal">
+      <a href="mailto:hello@tide.kitchen" class="contact-bar__email">hello@tide.kitchen</a>
+      <div class="contact-bar__quote">"A rising tide lifts all boats."</div>
+    </div>
+  </div>
+
+  <svg class="join__wave" viewBox="0 0 1440 140" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,80 C240,40 480,100 720,70 C960,40 1200,90 1440,60 L1440,140 L0,140 Z" fill="#102b44" opacity="0.5"/>
+    <path d="M0,100 C300,75 600,115 900,95 C1140,80 1320,105 1440,95 L1440,140 L0,140 Z" fill="#c9a961" opacity="0.18"/>
+  </svg>
+</section>
+
+<!-- ============================ FOOT ============================ -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__inner">
+      <div>
+        <div class="foot__brand">TIDE <em>Kitchen.</em></div>
+        <div class="foot__tag">"A rising tide lifts all boats."</div>
+        <div class="meta meta--mute" style="margin-top:32px;">
+          71st Street · South Shore<br>
+          Chicago, Illinois<br>
+          Opening 2027
+        </div>
+      </div>
+      <div class="foot__group">
+        <h4>Inquiries</h4>
+        <ul>
+          <li><a href="request.html">Investor Inquiry</a></li>
+          <li><a href="partner.html">Partner Inquiry</a></li>
+          <li><a href="community.html">Community Co-Invest</a></li>
+        </ul>
+      </div>
+      <div class="foot__group">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="mailto:hello@tide.kitchen">hello@tide.kitchen</a></li>
+          <li><a href="#join">Investor Inquiries</a></li>
+          <li><a href="#join">Partner Inquiries</a></li>
+          <li><a href="#join">Community Co-Invest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot__credits">
+      <span class="label">— Image Credits</span>
+      All Renderings: <a href="https://future-firm.org" target="_blank" rel="noopener">Future Firm</a><span class="sep">//</span>"71st St Today": Photograph by Jacob Yeung for <a href="https://fortune.com/2019/05/30/chicago-south-shore-middle-class/" target="_blank" rel="noopener">Fortune</a><span class="sep">//</span>Obama Presidential Center: <a href="https://www.obama.org" target="_blank" rel="noopener">Obama Foundation</a><span class="sep">//</span>Illinois Quantum &amp; Microelectronics Park: <a href="https://theljc.com" target="_blank" rel="noopener">Lamar Johnson Collaborative</a><span class="sep">//</span>Regal Mile Studios: <a href="https://blockclubchicago.org/2023/02/06/developers-break-ground-on-100-million-regal-mile-film-studios-in-south-shore/" target="_blank" rel="noopener">Block Club Chicago</a>
+    </div>
+    <div class="foot__copy">
+      <span>© 2026 TIDE Kitchen · All Rights Reserved</span>
+      <span>South Shore · Chicago</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ---------- Nav scroll state ---------- */
+  (function(){
+    var nav = document.getElementById('nav');
+    var scrolled = false;
+    function onScroll() {
+      var s = window.scrollY > 24;
+      if (s !== scrolled) {
+        scrolled = s;
+        nav.classList.toggle('is-scrolled', s);
+      }
+    }
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  })();
+
+  /* ---------- Reveal on scroll ---------- */
+  (function(){
+    if (!('IntersectionObserver' in window)) {
+      document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  })();
+
+  /* ---------- Count-up on hero $29 stat ---------- */
+  (function(){
+    var el = document.querySelector('[data-count]');
+    if (!el) return;
+    var target = parseInt(el.getAttribute('data-count'), 10);
+    var started = false;
+    function run() {
+      if (started) return; started = true;
+      var start = null;
+      var dur = 1400;
+      function step(ts) {
+        if (!start) start = ts;
+        var p = Math.min(1, (ts - start) / dur);
+        var eased = 1 - Math.pow(1 - p, 3);
+        el.textContent = Math.round(eased * target);
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting) { run(); io.disconnect(); }});
+      }, { threshold: 0.5 });
+      io.observe(el);
+    } else {
+      run();
+    }
+  })();
+</script>
+
+</body>
+</html>
