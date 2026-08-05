@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Community Co-Invest — TIDE Kitchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{--ink-deep:#061726; --ink:#0a1f33; --ink-soft:#1a3a57; --paper:#f5f1e8; --gold:#c9a961;
+    --text-paper:#efe9d9; --text-paper-mute:rgba(239,233,217,0.62);
+    --font-display:'EB Garamond','Times New Roman',Georgia,serif; --font-body:'Inter',-apple-system,sans-serif; --font-mono:'JetBrains Mono',ui-monospace,monospace;}
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{background:var(--ink-deep); color:var(--text-paper); font-family:var(--font-body); font-size:16px; line-height:1.55; min-height:100vh; display:flex; flex-direction:column;}
+  a{color:inherit;}
+  .topbar{display:flex; justify-content:space-between; align-items:center; padding:26px clamp(20px,5vw,56px); border-bottom:1px solid var(--ink-soft);}
+  .topbar__brand{font-family:var(--font-mono); font-size:14px; letter-spacing:.24em; text-transform:uppercase; color:var(--paper); text-decoration:none; font-weight:500;}
+  .topbar__brand em{color:var(--gold); font-style:normal;}
+  .topbar__back{font-family:var(--font-mono); font-size:12px; letter-spacing:.08em; color:var(--text-paper-mute); text-decoration:none;}
+  .topbar__back:hover{color:var(--gold);}
+  main{flex:1; width:100%; max-width:780px; margin:0 auto; padding:clamp(40px,8vh,88px) clamp(20px,5vw,56px) 64px;}
+  .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); margin-bottom:16px;}
+  h1{font-family:var(--font-display); font-weight:500; font-size:clamp(34px,6vw,56px); line-height:1.04; margin-bottom:18px;}
+  h1 em{color:var(--gold); font-style:italic;}
+  .lead{color:var(--text-paper-mute); font-size:clamp(16px,2vw,18px); line-height:1.6; max-width:640px; margin-bottom:40px;}
+  form{display:grid; gap:20px; max-width:680px;}
+  .rowf{display:grid; grid-template-columns:1fr 1fr; gap:20px;}
+  .field{display:flex; flex-direction:column; gap:8px;}
+  .field.full{grid-column:1 / -1;}
+  .field label{font-family:var(--font-mono); font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--text-paper-mute);}
+  .field input,.field select,.field textarea{background:rgba(239,233,217,0.05); border:1px solid var(--ink-soft); border-radius:6px; padding:13px 15px; color:var(--text-paper); font-family:var(--font-body); font-size:15px;}
+  .field input::placeholder,.field textarea::placeholder{color:rgba(239,233,217,0.40);}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none; border-color:var(--gold);}
+  .field select{appearance:none; -webkit-appearance:none; cursor:pointer;}
+  .field textarea{min-height:96px; resize:vertical;}
+  .ack{display:flex; gap:10px; align-items:flex-start; font-size:14px; color:var(--text-paper); line-height:1.5;}
+  .ack input{margin-top:3px; accent-color:var(--gold);}
+  .submit{justify-self:start; margin-top:6px; background:var(--gold); color:var(--ink); border:none; border-radius:30px; padding:15px 36px; font-family:var(--font-body); font-weight:600; font-size:15px; cursor:pointer;}
+  .submit:hover{opacity:.9;}
+  .fine{font-size:12px; color:var(--text-paper-mute); margin-top:2px; line-height:1.55;}
+  footer{border-top:1px solid var(--ink-soft); padding:28px clamp(20px,5vw,56px); display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; font-size:12px; color:var(--text-paper-mute);}
+  footer a{color:var(--text-paper-mute); text-decoration:none;}
+  footer a:hover{color:var(--gold);}
+  @media (max-width:640px){ .rowf{grid-template-columns:1fr;} }
+  /* readable dark dropdowns */
+  .field select{background-color:var(--ink);}
+  .field select option{background-color:var(--ink); color:var(--text-paper);}
+  /* inline submit confirmation */
+  .formstatus{margin-top:24px; padding:18px 20px; border:1px solid var(--gold); border-radius:10px; background:rgba(201,169,97,0.12); color:var(--text-paper); font-size:16px; line-height:1.55;}
+</style>
+</head>
+<body>
+  <div class="topbar">
+    <a class="topbar__brand" href="/">TIDE <em>·</em> KITCHEN</a>
+    <a class="topbar__back" href="/">← Back to site</a>
+  </div>
+  <main>
+    <div class="eyebrow">Community Co-Invest · South Shore</div>
+    <h1>Own a stake <em>next door.</em></h1>
+    <p class="lead">TIDE is building a way for South Shore residents to invest directly in local operators — sharing in the upside of the corridor as owners, not just patrons. The community investment opportunity (via SDIRA and Regulation Crowdfunding pathways) is being prepared. Add your name and we&rsquo;ll let you know the moment it opens — no commitment, no obligation.</p>
+    <form action="https://script.google.com/macros/s/PASTE_YOUR_DEPLOYMENT_ID_HERE/exec" method="POST">
+      <input type="hidden" name="form_type" value="Community / Reg CF">
+      <input type="hidden" name="_subject" value="Community co-invest interest — tide.kitchen">
+      <input type="hidden" name="audience" value="Community / Reg CF">
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
+      <div class="rowf">
+        <div class="field"><label for="cq-name">Full name</label><input id="cq-name" name="name" type="text" required placeholder="Your name"></div>
+        <div class="field"><label for="cq-email">Email</label><input id="cq-email" name="email" type="email" required placeholder="you@email.com"></div>
+      </div>
+      <div class="rowf">
+        <div class="field"><label for="cq-zip">ZIP / neighborhood</label><input id="cq-zip" name="zip_or_neighborhood" type="text" required placeholder="ZIP or neighborhood"></div>
+        <div class="field"><label for="cq-amt">Amount you&rsquo;re considering</label>
+          <select id="cq-amt" name="amount_considering" required><option value="">Select…</option><option>Under $500</option><option>$500 – $1,000</option><option>$1,000 – $5,000</option><option>$5,000 – $25,000</option><option>Over $25,000</option><option>Not sure yet</option></select>
+        </div>
+      </div>
+      <div class="field full"><label for="cq-how">How did you hear about TIDE?</label><input id="cq-how" name="how_heard" type="text" required placeholder="e.g., a friend, an event, social"></div>
+      <div class="field full"><label for="cq-msg">Anything you&rsquo;d like us to know?</label><textarea id="cq-msg" name="message" required placeholder="A few words"></textarea></div>
+      <label class="ack"><input type="checkbox" name="consent" value="yes" required> Keep me posted about the community co-invest opportunity. I understand this is an expression of interest, not a commitment.</label>
+      <button class="submit" type="submit">Join the list</button>
+      <p class="fine">This is an expression of interest only. It is not an offer to sell or a solicitation to buy any security, and not investment advice. Any community investment opportunity would be offered only through the appropriate channels with all required disclosures. By submitting, you consent to TIDE Kitchen contacting you.</p>
+    </form>
+  </main>
+  <footer>
+    <div>© 2026 TIDE Kitchen · South Shore, Chicago</div>
+    <div><a href="mailto:hello@tide.kitchen">hello@tide.kitchen</a> &nbsp;·&nbsp; <a href="/">tide.kitchen</a></div>
+  </footer>
+<script>
+  (function(){
+    var form = document.querySelector('form[action*="script.google.com"]');
+    if(!form) return;
+    var status = document.createElement('p');
+    status.className='formstatus'; status.setAttribute('role','status'); status.setAttribute('aria-live','polite');
+    status.style.display='none';
+    form.parentNode.insertBefore(status, form.nextSibling);
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var btn = form.querySelector('button[type="submit"]');
+      var orig = btn ? btn.textContent : '';
+      if(btn){ btn.disabled = true; btn.textContent = 'Sending\u2026'; }
+      // Google Apps Script web apps don't return CORS headers, so we post no-cors
+      // (the response is opaque) and show the confirmation optimistically.
+      fetch(form.action, { method:'POST', body:new FormData(form), mode:'no-cors' })
+        .then(function(){
+          form.reset();
+          form.style.display = 'none';
+          status.textContent = 'Thank you \u2014 your submission has been received. We\u2019ll follow up by email.';
+          status.style.display = 'block';
+          status.scrollIntoView({behavior:'smooth', block:'center'});
+        })
+        .catch(function(){
+          status.textContent = 'Something went wrong \u2014 please email hello@tide.kitchen.';
+          status.style.display = 'block';
+          if(btn){ btn.disabled=false; btn.textContent=orig; }
+        });
+    });
+  })();
+</script>
+</body>
+</html>
