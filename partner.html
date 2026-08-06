@@ -51,6 +51,8 @@
   .field select option{background-color:var(--ink); color:var(--text-paper);}
   /* inline submit confirmation */
   .formstatus{margin-top:24px; padding:18px 20px; border:1px solid var(--gold); border-radius:10px; background:rgba(201,169,97,0.12); color:var(--text-paper); font-size:16px; line-height:1.55;}
+  .ack{display:flex; gap:10px; align-items:flex-start; font-size:13px; color:var(--text-paper-mute); line-height:1.5;}
+  .ack input{margin-top:3px; accent-color:var(--gold);}
 </style>
 </head>
 <body>
@@ -64,7 +66,7 @@
     <h1>Build the platform <em>with us.</em></h1>
     <p class="lead">TIDE&rsquo;s four-stage pipeline depends on aligned partners at every stage — industry expertise, non-profit collaboration, real-estate and developer alignment, corporate sponsorship, and suppliers. Tell us how you&rsquo;d like to work together and we&rsquo;ll be in touch.</p>
 
-    <form action="https://script.google.com/macros/s/AKfycbzKfSnXXi668tpbg9Vy4MTZPnuc3_TeqacAxAOes2zWFnYZIWvTTxhaSlelwInwKQHARw/exec" method="POST">
+    <form action="https://script.google.com/macros/s/PASTE_YOUR_DEPLOYMENT_ID_HERE/exec" method="POST">
       <input type="hidden" name="form_type" value="Partner">
       <input type="hidden" name="_subject" value="Partnership inquiry — tide.kitchen">
       <input type="hidden" name="audience" value="Partner">
@@ -90,6 +92,7 @@
         </div>
       </div>
       <div class="field full"><label for="pq-msg">How would you like to partner?</label><textarea id="pq-msg" name="message" required placeholder="A few words on what you have in mind"></textarea></div>
+      <label class="ack"><input type="checkbox" name="confidentiality_ack" value="agreed" required> I understand any materials TIDE Kitchen may share are confidential, and I agree not to distribute or reproduce them.</label>
       <button class="submit" type="submit">Send inquiry</button>
       <p class="fine">We&rsquo;ll review and follow up by email. This is an inquiry, not a commitment. By submitting, you consent to TIDE Kitchen contacting you about your inquiry.</p>
     </form>
@@ -114,7 +117,7 @@
       if(btn){ btn.disabled = true; btn.textContent = 'Sending\u2026'; }
       // Google Apps Script web apps don't return CORS headers, so we post no-cors
       // (the response is opaque) and show the confirmation optimistically.
-      fetch(form.action, { method:'POST', body:new FormData(form), mode:'no-cors' })
+      fetch(form.action, { method:'POST', body:new URLSearchParams(new FormData(form)), mode:'no-cors' })
         .then(function(){
           form.reset();
           form.style.display = 'none';
