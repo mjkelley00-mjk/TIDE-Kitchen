@@ -627,6 +627,46 @@
     color: var(--text-paper-mute);
     line-height: 1.5;
   }
+
+  /* The spend, proven — closer strip for the market section */
+  .spend { margin-top: clamp(48px, 7vh, 80px); border-top: 1px solid var(--rule); padding-top: 32px; }
+  .spend__line {
+    font-family: var(--font-display);
+    font-size: clamp(22px, 2.6vw, 32px);
+    color: var(--paper);
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    max-width: 34ch;
+  }
+  .spend__line em { color: var(--teal, #1a6985); }
+  .spend__stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px, 3vw, 48px); }
+  .spend__stat .v {
+    font-family: var(--font-display);
+    font-size: clamp(30px, 3.4vw, 44px);
+    color: var(--gold);
+    font-weight: 600;
+    font-style: italic;
+    line-height: 1;
+  }
+  .spend__stat .l {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--paper);
+    margin: 10px 0 6px;
+  }
+  .spend__stat .d { font-size: 12.5px; line-height: 1.55; color: var(--text-paper-mute); }
+  .spend__src {
+    margin-top: 26px;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    color: var(--text-paper-mute);
+    opacity: 0.8;
+  }
+  @media (max-width: 880px) { .spend__stats { grid-template-columns: 1fr; gap: 24px; } }
   @media (max-width: 880px) {
     .leakage__row { grid-template-columns: 60px 1fr; gap: 12px; }
     .leakage__amt, .leakage__imp { grid-column: 2 / 3; }
@@ -2020,6 +2060,29 @@
         <div class="leakage__imp">Massive unmet demand for high-quality QSR and fast-casual dining concepts.</div>
       </div>
     </div>
+
+    <!-- ============ THE SPEND, PROVEN ============ -->
+    <div class="spend reveal">
+      <div class="spend__line">The neighborhood already spends the money — <em>it just can't spend it here.</em></div>
+      <div class="spend__stats">
+        <div class="spend__stat">
+          <div class="v">$44–65M</div>
+          <div class="l">Resident dining spend / yr</div>
+          <div class="d">What South Shore households spend eating out at national rates for their incomes (BLS).</div>
+        </div>
+        <div class="spend__stat">
+          <div class="v">9 → ~28</div>
+          <div class="l">71st Street</div>
+          <div class="d">Dining businesses today vs. what resident income supports at peer-corridor rates.</div>
+        </div>
+        <div class="spend__stat">
+          <div class="v">43 → ~61</div>
+          <div class="l">Community-wide</div>
+          <div class="d">South Shore dining today vs. supportable at peer-community rates.</div>
+        </div>
+      </div>
+      <div class="spend__src">City license data · ACS via CMAP · BLS Consumer Expenditure Survey. Market statistics, not projections. Methodology on request.</div>
+    </div>
   </div>
 </section>
 
@@ -2072,8 +2135,8 @@
     <div class="section__head">
       <div class="reveal"><div class="eyebrow">The Mega-Development Supercycle</div></div>
       <h2 class="section__title display reveal" data-delay="1">
-        The tide is rising 
-        <em class="accent-teal">but who will own the boats?</em>
+        The demand is already unmet
+        <em class="accent-teal">— the catalysts only increase it.</em>
       </h2>
     </div>
 
@@ -2155,6 +2218,7 @@
         <div class="pressure__desc">Of all 2022 home sales went to out-of-state buyers — highest rate citywide.</div>
       </div>
     </div>
+
   </div>
 </section>
 
