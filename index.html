@@ -1447,6 +1447,16 @@
     @keyframes beam { 0% { transform: translateY(-100%); } 100% { transform: translateY(100%); } }
   }
 
+  .impact3 { grid-template-columns: repeat(3, 1fr); }
+  .impact3 .sroi__outNum { font-size: clamp(64px, 9vw, 120px); }
+  .impact3 .sroi__out { padding: 0 8px; }
+  .impact3__note { font-family: var(--font-mono, ui-monospace, monospace); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; opacity: .6; margin: 18px 0 44px; text-align: center; }
+  .channels__head {
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold-deep); margin-top: 8px;
+  }
+  @media (max-width: 720px) { .impact3 { grid-template-columns: 1fr; } }
+
   .channels {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1926,7 +1936,7 @@
       </div>
       <div class="hero__stat reveal" data-delay="5">
         <span class="meta">Wealth Multiplier</span>
-        <div class="v"><em>~13×</em></div>
+        <div class="v"><em>~11×</em></div>
         <div class="l">Operator equity expansion at Wave exit</div>
       </div>
       <div class="hero__stat reveal" data-delay="6">
@@ -2311,7 +2321,7 @@
           <circle cx="130" cy="355" r="5" fill="#f3eede" stroke="#0a1f33" stroke-width="2"/><circle cx="270" cy="318" r="5" fill="#f3eede" stroke="#0a1f33" stroke-width="2"/><circle cx="400" cy="235" r="5" fill="#f3eede" stroke="#0a1f33" stroke-width="2"/><circle cx="520" cy="100" r="7" fill="#c9a961" stroke="#0a1f33" stroke-width="2"/>
           <text x="70" y="72" font-family="ui-monospace,monospace" font-size="11" fill="#0a1f33" fill-opacity="0.5">EV</text><text x="62" y="380" font-family="ui-monospace,monospace" font-size="11" fill="#0a1f33" fill-opacity="0.5">SDE</text>
           <g font-family="ui-monospace,monospace" font-size="11" fill="#0a1f33" fill-opacity="0.55" text-anchor="middle" letter-spacing="1"><text x="130" y="408">POOL</text><text x="270" y="408">ANCHOR</text><text x="400" y="408">CURRENT</text><text x="520" y="408">WAVE</text></g>
-          <rect x="398" y="40" width="158" height="62" fill="#0a1f33"/><text x="477" y="72" font-family="'EB Garamond',Georgia,serif" font-size="26" fill="#c9a961" text-anchor="middle">~13&#215;</text><text x="477" y="90" font-family="ui-monospace,monospace" font-size="8.5" fill="#efe9d9" text-anchor="middle" letter-spacing="1.5">WEALTH MULTIPLIER</text>
+          <rect x="398" y="40" width="158" height="62" fill="#0a1f33"/><text x="477" y="72" font-family="'EB Garamond',Georgia,serif" font-size="26" fill="#c9a961" text-anchor="middle">~11&#215;</text><text x="477" y="90" font-family="ui-monospace,monospace" font-size="8.5" fill="#efe9d9" text-anchor="middle" letter-spacing="1.5">WEALTH MULTIPLIER</text>
         </svg>
         <div class="corner"><em>Stage 04</em>Franchise Execution</div>
       </div>
@@ -2322,16 +2332,16 @@
         <p class="stage-feature__copy">
           For concepts with breakout potential, TIDE deploys growth capital to execute the franchise model — FDD navigation, equity alignment, and the activation of the wealth multiplier. Neighborhood brands transition into regional powerhouses with life-changing exits.
         </p>
-        <div class="stage-feature__metric"><div class="v"><em>~13×</em></div><div class="l">Operator Equity Expansion</div></div>
+        <div class="stage-feature__metric"><div class="v"><em>~11×</em></div><div class="l">Operator Equity Expansion</div></div>
       </div>
     </div>
 
     <div class="multiplier reveal">
-      <div class="multiplier__num">~13×</div>
+      <div class="multiplier__num">~11×</div>
       <div class="multiplier__body">
         <div class="multiplier__label">— The Wealth Multiplier</div>
         <h3 class="multiplier__title">From cash flow to <em>lasting ownership.</em></h3>
-        <p class="multiplier__copy">A single-unit operator generating $150K in earnings sells for roughly $450K on an SDE basis. A 15-unit portfolio generating $2.1M in normalized EBITDA, valued at a 7× EV/EBITDA multiple, commands $14.7M in enterprise value; net of the debt and growth equity that fund the scale-up, the founder keeps roughly $6.0M — a ~13× expansion of their personal equity driven by structural professionalization. It is the outcome for roughly 1 in 34 entrants; most build a sustained single- or multi-unit business instead, and that is the mission working.</p>
+        <p class="multiplier__copy">A single-unit operator generating $150K in earnings sells for roughly $450K on an SDE basis. A 15-unit portfolio generating $2.1M in normalized EBITDA, valued at a 7× EV/EBITDA multiple, commands $14.7M in enterprise value; net of the debt and growth equity that fund the scale-up and the neighbors who backed them early, the founder keeps roughly $5.0M — a ~11× expansion of their personal equity driven by structural professionalization. It is the outcome for roughly 1 in 34 entrants; most build a sustained single- or multi-unit business instead, and that is the mission working.</p>
       </div>
     </div>
   </div>
@@ -2353,53 +2363,53 @@
     </div>
 
     <p class="reveal" data-delay="2" style="font-family:var(--font-display);font-size:clamp(18px,2vw,22px);max-width:70ch;color:var(--text-ink-mute);font-weight:400;line-height:1.5;margin:0;">
-      Traditional commercial bank lending — collateral-heavy, fully amortizing, founder-guaranteed — strangles early-stage QSR cash flow. The Capital Toolkit sequences six distinct instruments across the four-stage pipeline, each calibrated to the operator's risk profile and growth phase.
+      Traditional commercial bank lending — collateral-heavy, fully amortizing, founder-guaranteed — strangles early-stage QSR cash flow. The Capital Toolkit sequences six kinds of capital across the four-stage pipeline, each matched to the operator's risk profile and growth phase. It describes how operators are financed; it is not an offer of any investment.
     </p>
 
     <div class="toolkit">
       <div class="toolkit__row reveal">
         <div class="num">01 /</div>
-        <div class="name">Grants <em>&amp; PRI</em><span class="sub">Non-Dilutive · Catalytic</span></div>
-        <div class="stage-tags"><span class="tag on">Pool</span><span class="tag on">Anchor</span><span class="tag">Current</span><span class="tag">Wave</span></div>
-        <div class="desc">Grants for startup, build-out, and hiring. Municipal, non-profit, philanthropic, and venture-aligned sources — plus recoverable, recyclable PRI.</div>
+        <div class="name">Platform <em>Capital</em><span class="sub">TIDE Holdings</span></div>
+        <div class="stage-tags"><span class="tag on">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
+        <div class="desc">The capital that builds and runs the platform itself — the incubator, the team, and the shared services that carry operators from a first stall toward franchise.</div>
       </div>
       <div class="toolkit__row reveal">
         <div class="num">02 /</div>
-        <div class="name">BDC <em>Debt</em><span class="sub">Convertible Note</span></div>
-        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag">Wave</span></div>
-        <div class="desc">Brick-and-mortar transition with founder-friendly repayment. Interest-only, PIK-flexible, convertible — operators can pay down for total independence or convert if the brand breaks out.</div>
+        <div class="name">Community <em>Ownership</em><span class="sub">In design</span></div>
+        <div class="stage-tags"><span class="tag on">Pool</span><span class="tag on">Anchor</span><span class="tag">Current</span><span class="tag">Wave</span></div>
+        <div class="desc">A path for neighbors to become part-owners of the businesses they already support. TIDE is designing it with securities counsel; nothing is offered today.</div>
       </div>
       <div class="toolkit__row reveal">
         <div class="num">03 /</div>
-        <div class="name">QOZ <em>Funds</em><span class="sub">Tax-Advantaged</span></div>
-        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
-        <div class="desc">External investor demand routed into operators and real estate. Capital-gains deferral with the 90% asset rule.</div>
+        <div class="name">Storefront <em>Notes</em><span class="sub">Convertible Note</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag">Current</span><span class="tag">Wave</span></div>
+        <div class="desc">Patient debt to open a storefront on the corridor: interest deferred while the unit ramps, then paid from cash flow and refinanced as the business settles — no balloon.</div>
       </div>
       <div class="toolkit__row reveal">
         <div class="num">04 /</div>
-        <div class="name">Community <em>Co-Invest</em><span class="sub">SDIRA · Reg CF</span></div>
-        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
-        <div class="desc">Up to $5M / 12 months. Channels neighborhood retirement and retail capital into the corridor — localized ownership with shared upside.</div>
+        <div class="name">Growth <em>Equity</em><span class="sub">Operator Growth Capital</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
+        <div class="desc">Growth capital released only once an operator clears the expansion gate, alongside conventional unit debt. It funds the multi-unit build that makes a brand franchisable.</div>
       </div>
       <div class="toolkit__row reveal">
         <div class="num">05 /</div>
-        <div class="name">ROBS<span class="sub">Retirement Rollover</span></div>
-        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
-        <div class="desc">Debt-free operator and franchisee equity without monthly debt service. A tax-advantaged rollover that unlocks retirement capital to finance a unit or buy into a franchise system.</div>
+        <div class="name">Retirement <em>Capital</em><span class="sub">Optional · Advised</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag">Current</span><span class="tag">Wave</span></div>
+        <div class="desc">Some operators may choose to use retirement savings to open a storefront. These structures carry real risk and strict rules, so TIDE treats them as optional and refers operators to independent advisers.</div>
       </div>
       <div class="toolkit__row reveal">
         <div class="num">06 /</div>
-        <div class="name">Venture <em>Equity</em><span class="sub">Direct Investment</span></div>
-        <div class="stage-tags"><span class="tag">Pool</span><span class="tag">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
-        <div class="desc">Funds franchise infrastructure ahead of the wealth multiplier. Multi-unit expansion plus executive support for institutional-grade scale.</div>
+        <div class="name">Opportunity <em>Zone</em><span class="sub">Partner Funds</span></div>
+        <div class="stage-tags"><span class="tag">Pool</span><span class="tag on">Anchor</span><span class="tag on">Current</span><span class="tag on">Wave</span></div>
+        <div class="desc">Established Opportunity Zone funds can invest alongside operators in corridor real estate and qualifying businesses, if South Shore is designated in the 2027 round.</div>
       </div>
     </div>
 
     <div class="recycling reveal">
       <div class="recycling__icon">↻</div>
       <div class="recycling__body">
-        <h4 class="recycling__title"><em>Perpetual</em> Capital Recycling</h4>
-        <p class="recycling__copy">A designated share of platform profits, BDC interest, and exit proceeds is systematically returned to the fund — leveling up ongoing fundraising to finance the next cohort of community-born brands and ensuring the ecosystem compounds over time rather than depleting.</p>
+        <h4 class="recycling__title">Capital that <em>stays in the corridor</em></h4>
+        <p class="recycling__copy">Early repayments and buyouts are put back to work in later cohorts, so the same dollars back more than one operator over time — and more of the corridor's growth stays with the people building it.</p>
       </div>
     </div>
   </div>
@@ -2429,13 +2439,13 @@
         <div class="aud__label">— Founder</div>
         <h3 class="aud__title">The Operator</h3>
         <div class="aud__hook">Equity in the brand they built.</div>
-        <p class="aud__copy">Captures the ~13× wealth multiplier at the Wave Stage exit. The headline outcome — but not the only one. Operators retain meaningful equity through a real liquidity event.</p>
+        <p class="aud__copy">Captures the ~11× wealth multiplier at the Wave Stage exit. The headline outcome — but not the only one. Operators retain meaningful equity through a real liquidity event.</p>
       </div>
       <div class="aud reveal" data-delay="1">
         <div class="aud__label">— Neighbors</div>
         <h3 class="aud__title">The Community</h3>
-        <div class="aud__hook">Direct equity in the local brand.</div>
-        <p class="aud__copy">South Shore residents invest through SDIRAs and Reg CF — sharing in the upside of the corridor's resurgence as owners, not just patrons.</p>
+        <div class="aud__hook">A path to ownership.</div>
+        <p class="aud__copy">TIDE is working with counsel on a way for South Shore residents to become part-owners of the businesses on their corridor — owners, not just patrons. Nothing is offered yet.</p>
       </div>
       <div class="aud reveal" data-delay="2">
         <div class="aud__label">— Residents</div>
@@ -2451,7 +2461,7 @@
 <section class="section sroi">
   <div class="wrap">
     <div class="section-marker">
-      <span class="left">Social ROI</span>
+      <span class="left">Community Return</span>
       <span class="right">Beyond Financial Return</span>
     </div>
 
@@ -2463,28 +2473,29 @@
     </div>
 
     <p class="reveal" data-delay="2" style="font-family:var(--font-display);font-size:clamp(18px,2vw,22px);max-width:70ch;color:var(--text-ink-mute);font-weight:400;line-height:1.5;margin:0;">
-      Roughly 1 in 34 operators reaches a franchise exit. The rest are not failures: about seven in ten build a sustained standalone or multi-unit business. Across ten years the base case produces ~375 jobs and $6.7M of operator wealth, net of capital repaid. For context, published social-return studies of community-development initiatives find $2.79–$3.06 of monetized value per dollar invested — a research range, not a TIDE forecast.
+      Roughly 1 in 34 operators reaches a franchise exit. The rest are not failures: about seven in ten build a sustained standalone or multi-unit business. From the first site's first ten years of cohorts, the plan projects about a dozen lasting businesses running ~31 locations, ~375 jobs, and ~$5.5M of equity owned by the South Side founders who built them.
     </p>
 
-    <div class="sroi__visual reveal" data-delay="3">
-      <div class="sroi__in">
-        <div class="sroi__inLabel">— Operators</div>
-        <div class="sroi__inNum">~71%</div>
-        <div class="sroi__inSub">reach a sustained business</div>
-      </div>
-      <div class="sroi__channels" aria-hidden="true">
-        <div class="sroi__beam"></div>
-        <div class="sroi__beam"></div>
-        <div class="sroi__beam"></div>
-        <div class="sroi__beam"></div>
+    <div class="sroi__visual impact3 reveal" data-delay="3">
+      <div class="sroi__out">
+        <div class="sroi__outLabel">— Operators</div>
+        <div class="sroi__outNum">~71%</div>
+        <div class="sroi__outSub">reach a sustained business</div>
       </div>
       <div class="sroi__out">
-        <div class="sroi__outLabel">— Community Value Out</div>
+        <div class="sroi__outLabel">— Jobs</div>
         <div class="sroi__outNum">~375</div>
-        <div class="sroi__outSub">jobs and $6.7M of operator wealth</div>
+        <div class="sroi__outSub">from ten years of cohorts</div>
+      </div>
+      <div class="sroi__out">
+        <div class="sroi__outLabel">— Founder Wealth</div>
+        <div class="sroi__outNum">$5.5M</div>
+        <div class="sroi__outSub">owned by local founders</div>
       </div>
     </div>
+    <p class="impact3__note reveal">Planning estimates from TIDE's base-case model for the 71st Street site; not a forecast or a promise of any outcome.</p>
 
+    <div class="channels__head reveal">How the value reaches the neighborhood</div>
     <div class="channels">
       <div class="channel reveal">
         <div class="channel__num">Channel 01</div>
@@ -2522,17 +2533,17 @@
       <div class="eyebrow reveal">Opening 2027 · Founding Cohort</div>
       <h2 class="join__title reveal" data-delay="1">Join the <em>TIDE.</em></h2>
       <p class="join__deck reveal" data-delay="2">
-        The next great multi-unit brand will come from the South Side. Investment, advisory, and partnership opportunities are open to those who want to help build it &mdash; and a more equitable South Shore along the way.
+        The next great multi-unit brand will come from the South Side. Conversations are open with those who want to help build it &mdash; and a more equitable South Shore along the way.
       </p>
     </div>
 
     <div class="pathways">
       <div class="path reveal">
         <div class="path__label">For the Community</div>
-        <h3 class="path__title">Own a stake <em>next door.</em></h3>
-        <p class="path__copy">SDIRA and Reg CF pathways for South Shore residents to invest directly in local operators — sharing in the upside of the corridor as owners, not just patrons.</p>
+        <h3 class="path__title">A stake <em>next door.</em></h3>
+        <p class="path__copy">TIDE is exploring ways for South Shore residents to become part-owners of local businesses. Join the list to hear first — no money is asked for or accepted.</p>
         <a href="community.html" class="path__cta">
-          <span>Join the Co-Invest List</span>
+          <span>Join the Community List</span>
           <span class="arrow"></span>
         </a>
       </div>
@@ -2547,10 +2558,10 @@
       </div>
       <div class="path reveal" data-delay="2">
         <div class="path__label">For Investors</div>
-        <h3 class="path__title">Capital that <em>compounds.</em></h3>
-        <p class="path__copy">Institutional, family office, and OZ-fund capital across debt, equity, and convertible vehicles. Co-invest alongside operators built for franchise scale from Day 1.</p>
+        <h3 class="path__title">Back the <em>platform.</em></h3>
+        <p class="path__copy">TIDE talks with prospective funders and investors one-on-one. Nothing on this site is an offer to sell, or a solicitation to buy, any security.</p>
         <a href="request.html" class="path__cta">
-          <span>Request Information</span>
+          <span>Start a Conversation</span>
           <span class="arrow"></span>
         </a>
       </div>
@@ -2586,7 +2597,7 @@
         <ul>
           <li><a href="request.html">Investor Inquiry</a></li>
           <li><a href="partner.html">Partner Inquiry</a></li>
-          <li><a href="community.html">Community Co-Invest</a></li>
+          <li><a href="community.html">Community List</a></li>
         </ul>
       </div>
       <div class="foot__group">
@@ -2595,7 +2606,7 @@
           <li><a href="mailto:hello@tide.kitchen">hello@tide.kitchen</a></li>
           <li><a href="#join">Investor Inquiries</a></li>
           <li><a href="#join">Partner Inquiries</a></li>
-          <li><a href="#join">Community Co-Invest</a></li>
+          <li><a href="#join">Community List</a></li>
         </ul>
       </div>
     </div>
@@ -2604,7 +2615,7 @@
       All Renderings: <a href="https://future-firm.org" target="_blank" rel="noopener">Future Firm</a><span class="sep">//</span>"71st St Today": Photograph by Jacob Yeung for <a href="https://fortune.com/2019/05/30/chicago-south-shore-middle-class/" target="_blank" rel="noopener">Fortune</a><span class="sep">//</span>Obama Presidential Center: <a href="https://www.obama.org" target="_blank" rel="noopener">Obama Foundation</a><span class="sep">//</span>Illinois Quantum &amp; Microelectronics Park: <a href="https://theljc.com" target="_blank" rel="noopener">Lamar Johnson Collaborative</a><span class="sep">//</span>Regal Mile Studios: <a href="https://blockclubchicago.org/2023/02/06/developers-break-ground-on-100-million-regal-mile-film-studios-in-south-shore/" target="_blank" rel="noopener">Block Club Chicago</a>
     </div>
     <div class="foot__copy">
-      <span>© 2026 TIDE Kitchen · All Rights Reserved</span>
+      <span>© 2026 TIDE Kitchen · All Rights Reserved · Nothing on this site is an offer of securities or investment advice.</span>
       <span>South Shore · Chicago</span>
     </div>
   </div>
