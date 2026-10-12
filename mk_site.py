@@ -1,6 +1,7 @@
-# Generates request.html, partner-room.html and company-room.html for tide.kitchen (TIDE data room).
-import html, re
-SITE='/tmp/claude-0/work/site/'
+# Generates request.html, partner-room.html and company-room.html for tide.kitchen.
+# The data rooms now live at rooms.tide.kitchen; the two room pages here only point there.
+import html, os, re
+SITE=os.path.dirname(os.path.abspath(__file__))+'/'  # writes the pages next to this script
 EXEC_URL='https://script.google.com/macros/s/AKfycbziJ1wsEfBW3cs_wdorrGMOQ7e46B0FjyDRJuHq89nN9ErAem1HDnTFJw9lII9NSk2t2Q/exec'   # set after the Apps Script web app is deployed
 HEAD='''<!DOCTYPE html>
 <html lang="en">
@@ -107,7 +108,7 @@ REQ_BODY='''  <main>
         <div class="field"><label for="rq-int">I&rsquo;m interested in</label>
           <select id="rq-int" name="interest" required><option value="">Select&hellip;</option><option>Funding the platform</option><option>A partner site or development partnership</option><option>Lending to operators</option><option>Public or philanthropic partnership</option><option>Advising</option><option>Learning more about TIDE Kitchen</option></select>
         </div>
-        <div class="field"><label for="rq-gmail">Google account email <span>(optional)</span></label><input id="rq-gmail" name="google_email" type="email" maxlength="160" placeholder="If different from above"><span class="hint">Materials are shared through Google Drive.</span></div>
+        <div class="field"><label for="rq-gmail">Other email <span>(optional)</span></label><input id="rq-gmail" name="google_email" type="email" maxlength="160" placeholder="Another address you use"><span class="hint">You&rsquo;ll be able to open the data room from either address.</span></div>
       </div>
       <div class="field"><label for="rq-msg">A few words on your interest</label><textarea id="rq-msg" name="message" required maxlength="2000" placeholder="What you&rsquo;re looking for, or how you heard about TIDE Kitchen"></textarea></div>
       <label class="ack"><input type="checkbox" name="confidentiality_ack" value="agreed" required> I understand that any materials TIDE Kitchen shares are confidential, and I agree not to distribute or reproduce them.</label>
@@ -151,60 +152,25 @@ REQ_JS='''<script>
 open(SITE+'request.html','w').write(HEAD%('Request Materials — TIDE Kitchen',REQ_CSS)+REQ_BODY.replace('__EXEC__',EXEC_URL)+FOOT%REQ_JS)
 
 # ---------------- room pages ----------------
-ROOM_CSS='''  .notice{border-left:3px solid var(--gold); background:rgba(239,233,217,0.05); padding:14px 18px; font-size:14px; color:var(--text-paper-mute); border-radius:0 8px 8px 0; margin-bottom:32px;}
-  .notice strong{color:var(--text-paper); font-weight:600;}
-  .how{border:1px solid var(--ink-soft); border-radius:10px; padding:22px 24px; margin-bottom:40px; background:var(--ink);}
-  .how ul{padding-left:20px; display:flex; flex-direction:column; gap:6px; font-size:15px; color:var(--text-paper-mute);}
-  ol.docs{list-style:none; border-top:1px solid var(--gold);}
-  ol.docs li{display:grid; grid-template-columns:40px minmax(0,1fr) auto; gap:6px 16px; align-items:start; padding:20px 0; border-bottom:1px solid var(--ink-soft);}
-  .n{font-family:var(--font-display); font-style:italic; font-size:28px; color:var(--gold); line-height:1.05; font-variant-numeric:tabular-nums;}
-  .t{font-weight:600; font-size:17px;}
-  .d{color:var(--text-paper-mute); font-size:15px; margin-top:3px;}
-  .meta{font-family:var(--font-mono); font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--text-paper-mute); margin-top:8px;}
-  a.open{display:inline-block; background:var(--gold); color:var(--ink); font-weight:600; font-size:14px; text-decoration:none; padding:9px 18px; border-radius:30px; white-space:nowrap;}
-  a.open:hover{opacity:.9;}
-  a.plain{color:var(--gold);}
-  .after{color:var(--text-paper-mute); font-size:15px; margin-top:16px;}
+# The rooms moved to rooms.tide.kitchen (a secure viewer behind a one-time email code). These pages
+# send anyone with an old link there.
+MOVED_CSS='''  .open{display:inline-block; background:var(--gold); color:var(--ink); font-weight:600; font-size:15px; text-decoration:none; padding:13px 28px; border-radius:30px;}
+  .open:hover{opacity:.9;}
   .contact{color:var(--text-paper-mute); font-size:15px; margin-top:36px;}
-  .contact b{color:var(--text-paper); font-weight:600; user-select:all;}
-  @media (max-width:560px){ ol.docs li{grid-template-columns:30px minmax(0,1fr);} ol.docs li a.open{grid-column:2; justify-self:start;} }'''
-G='https://drive.google.com/file/d/%s/view'
-def room(fname,title,eyebrow,h1,lede,rules,docs,folder,model_line=True):
-    li=''.join(f'<li><div class="n">{i}</div><div><div class="t">{html.escape(t)}</div><div class="d">{d}</div><div class="meta">{m}</div></div><a class="open" href="{G%u}" target="_blank" rel="noopener">Open</a></li>\n      ' for i,(t,d,m,u) in enumerate(docs,1))
-    body=f'''  <main>
+  .contact b{color:var(--text-paper); font-weight:600; user-select:all;}'''
+def moved(fname, title, eyebrow, room):
+    url = 'https://rooms.tide.kitchen/' + room
+    body = f'''  <main>
     <div class="eyebrow">{eyebrow}</div>
-    <h1>{h1}</h1>
-    <p class="lead">{lede}</p>
-    <div class="notice"><strong>Shared by invitation. October 2026.</strong> Not an offer to sell or a solicitation to buy any security. Figures are planning estimates from a model on stated assumptions, not a forecast. Legal, tax and securities treatments are open until counsel confirms them.</div>
-    <section class="how"><h2>How to use this data room</h2>
-      <ul>{rules}<li>Please don&rsquo;t forward files or this page. Ask us to add a colleague and we will invite them directly.</li><li>Files are updated in place, so a link always opens the current version.{' The model version (v7.5) is the number to quote if you send questions.' if model_line else ''}</li></ul>
-    </section>
-    <section><h2>Documents, in reading order</h2>
-      <ol class="docs">
-      {li}</ol>
-      <p class="after">Each document opens in Google Drive and needs the Google account your invitation was sent to. <a class="plain" href="https://drive.google.com/drive/folders/{folder}" target="_blank" rel="noopener">Open the whole folder</a>.</p>
-    </section>
+    <h1>The data room <em>has moved.</em></h1>
+    <p class="lead">The documents now open in a secure viewer at rooms.tide.kitchen. Enter the email address your invitation was sent to, and you&rsquo;ll receive a one-time code to sign in.</p>
+    <p><a class="open" href="{url}">Open the {html.escape(title.replace('TIDE Kitchen ', ''))}</a></p>
     <p class="contact">Questions, or access for a colleague: Michael Kelley, Founder &amp; Managing Director · <b>hello@tide.kitchen</b></p>
   </main>
 '''
-    open(SITE+fname,'w').write(HEAD%(title,ROOM_CSS)+body+FOOT%'')
-room('partner-room.html','TIDE Kitchen Partner Data Room','TIDE Kitchen · Partner Data Room','The platform, <em>in full.</em>',
- 'For development partners, lenders, and public and philanthropic partners. How the incubator, the co-owned storefronts and the property vehicle work, with the evidence behind each assumption.',
- '<li>Start with the white paper. The plan and the comparables memo are for diligence.</li><li>These are partner editions of the full documents.</li>',
- [('White paper, partner edition','The whole design and the reasoning behind it: the market, the four stages, the co-owned storefront, partner sites, the property vehicle, community ownership, public return and risks.','PDF · 32 pages','1nzRsZoh2y11hKAnHUwtEuhKZR4m8reJV'),
-  ('Business and operations plan, partner edition','How it runs: staffing, the incubator, store economics and buyouts, the site plan and what TIDE asks of a development partner, property, compliance and open items.','PDF · 16 pages','1KwJof6J_04jxRmykeOZpGYAgoXQAbBW5'),
-  ('Comparables and validation, partner edition','The evidence file: each load-bearing assumption set against a named benchmark, from stall sales and store margins to rents, loan terms and the public-return method.','PDF · 20 pages','1xD-b38Mh_mt9eIfTqrX7PeB8McrlhkOW')],
- '1ILg3s3xCtbrUP4aIpdP8ID7hekiqbR1Z', model_line=False)
-room('company-room.html','TIDE Kitchen Company Data Room','TIDE Kitchen · Company Data Room','The platform, the company <em>and the model.</em>',
- 'The complete set: the summary and deck, the full analysis, the operating plan, the evidence file and the working model.',
- '<li>Start with the executive summary and the deck. The white paper, strategic analysis, plan, comparables and model are for diligence.</li><li>Document 8 is indicative and subject to counsel review.</li>',
- [('Executive summary','One page: the thesis, the model, the numbers and what is open.','PDF · 1 page','1VcsK9Ql_E46ofnQkAC3NkP1fmk_KagsY'),
-  ('Pitch deck','The whole picture in 15 slides.','PDF · 15 slides','1FSMpCzDbTf9rDXdbjNivl0ZmHXx7W0pQ'),
-  ('White paper','The full design and the reasoning behind it, including the capital architecture.','PDF · 39 pages','1rFGv-TX35bVNS3hML2Uep-Axzp0oICLP'),
-  ('Strategic analysis','The detailed case, section by section, with the single-input risk tests and open items.','PDF · 28 pages','1NhASKAN4YHrT4XOpOx1K7y8U95dQxWYO'),
-  ('Business and operations plan','How it runs: staffing, the incubator, stores and buyouts, the site plan, property, the funds and the company.','PDF · 17 pages','1HcsqQbKkuNIl5lYiyar9TySskYxMiHCd'),
-  ('Comparables and validation','The evidence file: each load-bearing assumption set against a named benchmark.','PDF · 24 pages','15vmRKu6HUpH_fLfbQvHxDF1q8CKwUlPk'),
-  ('Platform model v7.5','The complete workbook behind every figure. Blue cells on the Inputs tab are assumptions you can change in your own copy; the Risk Tests tab records each single-input test.','Excel workbook · 14 tabs','1zuznMnAX24We0ezsXHqYj_1wBGia2vmv'),
-  ('Structure summary','Indicative terms. Non-binding and subject to counsel review.','PDF · 9 pages','1bFhLddWnchwGnrVwEMUyAtIJkQVcrnd4')],
- '1CYafrNY5nQM9laJzsPRmqfNAlEVSdAaY')
+    page = HEAD%(title, MOVED_CSS) + body + FOOT%''
+    page = page.replace('</title>', '</title>\n<meta http-equiv="refresh" content="0; url=' + url + '">', 1)
+    open(SITE+fname,'w').write(page)
+moved('partner-room.html', 'TIDE Kitchen Partner Data Room', 'TIDE Kitchen · Partner Data Room', 'partner')
+moved('company-room.html', 'TIDE Kitchen Company Data Room', 'TIDE Kitchen · Company Data Room', 'company')
 print('written')
