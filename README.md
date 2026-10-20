@@ -15,4 +15,4 @@ assets/img/         photographs and renderings
 No documents are stored in this repository. Forms post to Google Apps Script endpoints set in each
 page's `<form action="…">`.
 
-Nothing on this site is an offer to sell, or a solicitation of an offer to buy, any security.
+Nothing on this site is an offer to sell, or a solicitation of an offer to buy, any security. 
