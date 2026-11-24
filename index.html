@@ -1886,6 +1886,40 @@
   .vision .section-marker .right,
   .materials .section-marker .left,
   .materials .section-marker .right { color: var(--gold); }
+  /* ====================================================
+     TEAM — reuses .section, .section-marker, .section__head,
+     .eyebrow, .display, .wealth__lead, .audiences, .aud, .aud__title,
+     .aud__hook, .aud__copy; new classes below
+     ==================================================== */
+  .team { background: var(--ink); position: relative; overflow: hidden; }
+  .team::before {
+    content: ""; position: absolute; top: -120px; right: -15%;
+    width: 760px; height: 760px; pointer-events: none;
+    background: radial-gradient(circle, rgba(74,138,158,0.12) 0%, transparent 60%);
+  }
+  .team .section-marker { border-color: var(--rule); }
+  .team .section-marker .left, .team .section-marker .right { color: var(--gold); }
+  .audiences.team-grid { grid-template-columns: repeat(2, 1fr); position: relative; }
+  .team-card { flex-direction: row; align-items: flex-start; gap: 28px; }
+  .team-card__body { display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+  .team-card .aud__hook { margin: 0 0 4px; }
+  .team-photo {
+    position: relative; flex: none; width: 120px; height: 120px; border-radius: 50%; overflow: hidden;
+    background: radial-gradient(circle at 32% 26%, #5c9db1 0%, var(--teal) 48%, #2d6a7f 100%);
+    box-shadow: 0 0 0 1px var(--gold), 0 0 0 6px rgba(201,169,97,0.14);
+  }
+  .team-photo__ini {
+    position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-size: 42px; font-weight: 500; font-style: italic;
+    color: var(--gold-bright); letter-spacing: 0.02em;
+  }
+  .team-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+  @media (max-width: 880px) {
+    .audiences.team-grid { grid-template-columns: 1fr; }
+    .team-card { flex-direction: column; gap: 20px; }
+    .team-photo { width: 96px; height: 96px; }
+    .team-photo__ini { font-size: 34px; }
+  }
 </style>
 </head>
 <body>
@@ -1900,6 +1934,7 @@
       <a href="#opportunity">Opportunity</a>
       <a href="#platform">Platform</a>
       <a href="#capital">Capital</a>
+      <a href="#team">Team</a>
       <a href="#join">Join</a>
     </div>
     <a href="#join" class="nav__cta">Get In Touch</a>
@@ -2558,6 +2593,63 @@
 </section>
 
 <!-- ============================ JOIN ============================ -->
+<!-- ============================ TEAM ============================ -->
+<section class="section team" id="team">
+  <div class="wrap">
+    <div class="section-marker">
+      <span class="left">The Team</span>
+      <span class="right">Founder &amp; Partners</span>
+    </div>
+
+    <div class="section__head">
+      <div class="reveal"><div class="eyebrow">The Team</div></div>
+      <h2 class="section__title display reveal" data-delay="1">
+        Experienced partners <em>for every stage.</em>
+      </h2>
+    </div>
+
+    <p class="wealth__lead reveal" data-delay="2">
+      Multi-unit operations, franchise development and law, <em>with the platform’s founder.</em>
+    </p>
+
+    <div class="audiences team-grid">
+      <article class="aud team-card reveal">
+        <div class="team-photo"><span class="team-photo__ini" aria-hidden="true">XE</span><img src="assets/img/team/xavier.jpg" alt="Xavier Egan" loading="lazy" style="object-position:50% 50%" onerror="this.remove()"></div>
+        <div class="team-card__body">
+          <h3 class="aud__title">Xavier Egan</h3>
+          <div class="aud__hook">Partner, Franchise Development</div>
+          <p class="aud__copy">Partner at ScaleWise Franchise, focused on financial modeling, private equity and operational strategy for franchise systems. President of Mergers &amp; Acquisitions at Capital Asset Advisors, with middle-market buy- and sell-side experience. Boards: The DEC Network, ScanSource Diversity Partner Program, UT Arlington Alumni Association. 2025 UTA Distinguished Alumni Rising Star Award.</p>
+        </div>
+      </article>
+      <article class="aud team-card reveal" data-delay="1">
+        <div class="team-photo"><span class="team-photo__ini" aria-hidden="true">CG</span><img src="assets/img/team/calvin.jpg" alt="Calvin Golden" loading="lazy" style="object-position:50% 50%" onerror="this.remove()"></div>
+        <div class="team-card__body">
+          <h3 class="aud__title">Calvin Golden</h3>
+          <div class="aud__hook">Partner, Multi-Unit Operations</div>
+          <p class="aud__copy">35+ years in franchising. Helped build Wingstop’s early franchise model — documentation, training, operating systems, construction standards and national distribution — and sold its first franchise locations; later a multi-unit Wingstop franchisee and owner-operator. Wingstop Lifetime Achievement Award (2005); Wingstop Charities board. Co-founder and Managing Director, ScaleWise Franchise.</p>
+        </div>
+      </article>
+      <article class="aud team-card reveal">
+        <div class="team-photo"><span class="team-photo__ini" aria-hidden="true">MK</span><img src="assets/img/team/michael.jpg" alt="Michael Kelley" loading="lazy" style="object-position:50% 50%" onerror="this.remove()"></div>
+        <div class="team-card__body">
+          <h3 class="aud__title">Michael Kelley</h3>
+          <div class="aud__hook">Founder, Managing Director</div>
+          <p class="aud__copy">Chicago entrepreneur focused on community development and economic mobility. Founded a marketing firm and a shared workspace, and invests in real estate. Organized Bennett Place, a resident-led redevelopment on 71st Street in South Shore, where he lives with his family.</p>
+        </div>
+      </article>
+      <article class="aud team-card reveal" data-delay="1">
+        <div class="team-photo"><span class="team-photo__ini" aria-hidden="true">CW</span><img src="assets/img/team/carlos.jpg" alt="Carlos White" loading="lazy" style="object-position:50% 50%" onerror="this.remove()"></div>
+        <div class="team-card__body">
+          <h3 class="aud__title">Carlos White</h3>
+          <div class="aud__hook">Partner, General Counsel</div>
+          <p class="aud__copy">Transactional attorney advising emerging companies on corporate, capital-raising, franchising and licensing matters; founder and CEO of Prexsentials. Former partner at FBT Gibbons, Husch Blackwell and Lathrop GPM, and former General Counsel of Black Box Corporation. City of Dallas Franchise Impact Ambassador, appointed by Mayor Eric Johnson.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
 <section class="section join" id="join">
   <div class="wrap">
     <div class="section-marker">
